@@ -1,1 +1,34 @@
-#+TITLE: doom-emacs-private
+#+TITLE: Doom emacs private module
+
+* About
+This is my emacs config as a plugin for the amazing hlissner/doom-emacs.
+
+* Why Doom Emacs ?
+
+- it is blazing fast
+- it is well thought
+- its community (on discord) is most friendly
+- it's maintained by one developer, who keeps a vision and everything consistent
+
+* Prerequisites
+
+** Linux
+
+* Installation
+
+First ensure that you have installed doom:
+
+#+BEGIN_SRC shell
+$ git clone -b develop --single-branch https://github.com/hlissner/doom-emacs.git ~/.emacs.d
+$ cd ~/.emacs.d
+$ make
+$ make doctor
+$ make compile
+#+END_SRC
+
+Then install the module:
+#+BEGIN_SRC shell
+$ git clone https://github.com/appleshan/doom-emacs-private.git ~/.doom.d
+$ cd ~/.doom.d
+$ make
+#+END_SRC
