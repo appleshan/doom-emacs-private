@@ -1,4 +1,5 @@
 ;;; ~/.doom.d/init.el -*- lexical-binding: t; -*-
+;; Copy me to ~/.doom.d/init.el or ~/.config/doom/init.el, then edit me!
 
 ;; ------------- ELPA Mirrors --------------
 ;; ELPA: refer to https://elpa.emacs-china.org/
