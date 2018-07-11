@@ -1,5 +1,8 @@
 ;;; +ui.el --- description -*- lexical-binding: t; -*-
 
+(when (featurep! :ui doom)
+  (setq doom-theme 'doom-dracula))
+
 ;; Font setup
 (setq
       doom-font (font-spec :family "Fira Mono" :size 16)
