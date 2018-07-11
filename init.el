@@ -62,8 +62,8 @@
       ;ein               ; tame Jupyter notebooks with emacs
       ;gist              ; interacting with github gists
       ;macos             ; MacOS-specific commands
-      ;make              ; run make tasks from Emacs
        magit             ;
+      ;make              ; run make tasks from Emacs
       ;password-store    ; password manager for nerds
       ;pdf               ; pdf enhancements
       ;prodigy           ; FIXME managing external services & code builders
@@ -146,3 +146,6 @@
        ;; your own modules.
        (default +bindings +snippets +evil-commands))
 
+(provide 'init)
+
+;;; init.el ends here
