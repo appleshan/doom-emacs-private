@@ -31,6 +31,9 @@
     ; ("org"   . "orgmode.org/elpa/")
       ))
 
+;; ------------- Load Personal Modules --------------
+(load! "+ui")
+
 (provide 'config)
 
 ;;; config.el ends here
