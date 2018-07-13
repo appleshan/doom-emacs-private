@@ -2,7 +2,7 @@
 
 (def-package! pyim
   :init
-  (setq pyim-directory (expand-file-name "pyim/" user-emacs-directory)
+  (setq pyim-directory (expand-file-name ".local/pyim/" user-emacs-directory)
         pyim-dcache-directory (expand-file-name "dcache/" pyim-directory)
         default-input-method "pyim")
   :config
