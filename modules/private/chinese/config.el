@@ -1,5 +1,25 @@
 ;;; config.el -*- lexical-binding: t; -*-
 
+(defvar *large-buffer-threshold* 300000
+  "Buffer whose size beyond it will have a different behavior for the efficiency")
+
+(def-package! pangu-spacing
+  :config
+  (progn
+    (global-pangu-spacing-mode -1)
+    ;; Always insert `real' space in org-mode.
+    (add-hook 'org-mode-hook
+              '(lambda ()
+                 (set (make-local-variable 'pangu-spacing-real-insert-separtor) t)))
+
+    (defun enable-pangu-spacing-when-buffer-not-large ()
+      "when buffer is not large, turn on it"
+      (when (< (buffer-size) *large-buffer-threshold*)
+        (pangu-spacing-mode 1)))
+
+    (dolist (i '(org-mode-hook prog-mode-hook text-mode-hook))
+      (add-hook i 'enable-pangu-spacing-when-buffer-not-large))))
+
 (def-package! pyim
   :init
   (setq pyim-directory (expand-file-name ".local/pyim/" user-emacs-directory)
