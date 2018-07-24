@@ -19,7 +19,8 @@
 
 ;; Minibuffer
 (setq show-trailing-whitespace t)
-(add-hook! minibuffer-setup (setq-local show-trailing-whitespace nil))
+(add-hook! '(minibuffer-setup-hook doom-popup-mode-hook)
+  (setq-local show-trailing-whitespace nil))
 
 (provide '+ui)
 
