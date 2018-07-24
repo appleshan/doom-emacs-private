@@ -37,6 +37,9 @@
       mouse-wheel-follow-mouse t                    ; scroll window under mouse
       scroll-step 1)
 
+(when (not (featurep! :ui doom-quit))
+  (setq confirm-kill-emacs nil))
+
 (provide '+ui)
 
 ;;; +ui.el ends here
