@@ -50,6 +50,9 @@
                    (abbreviate-file-name (buffer-file-name))
                  "%b"))))
 
+;; Hide the mouse while typing:
+(setq make-pointer-invisible t)
+
 (when (not (featurep! :ui doom-quit))
   (setq confirm-kill-emacs nil))
 
