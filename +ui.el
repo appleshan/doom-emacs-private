@@ -31,6 +31,12 @@
 (add-hook! '(minibuffer-setup-hook doom-popup-mode-hook)
   (setq-local show-trailing-whitespace nil))
 
+;; Smooth mouse scrolling
+(setq mouse-wheel-scroll-amount '(2 ((shift) . 1))  ; scroll two lines at a time
+      mouse-wheel-progressive-speed nil             ; don't accelerate scrolling
+      mouse-wheel-follow-mouse t                    ; scroll window under mouse
+      scroll-step 1)
+
 (provide '+ui)
 
 ;;; +ui.el ends here
