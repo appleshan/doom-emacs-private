@@ -37,6 +37,12 @@
       mouse-wheel-follow-mouse t                    ; scroll window under mouse
       scroll-step 1)
 
+;; Happy hacking apple!
+;; 用 Emacs, 需忘记鼠标, 无视菜单.
+(with-current-buffer (get-buffer-create "*scratch*")
+  (emacs-lisp-mode)
+  (insert ";; Talk is cheap. Show me the code.\n\n"))
+
 (when (not (featurep! :ui doom-quit))
   (setq confirm-kill-emacs nil))
 
