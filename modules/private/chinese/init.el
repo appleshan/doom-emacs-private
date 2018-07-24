@@ -15,7 +15,10 @@
       (unless current-input-method
         (toggle-input-method))
       ))
-    (if current-input-method (message "IME on!")))
+    (if current-input-method
+        (message "IME on!")
+      (message "IME off!"))
+    )
    (t
     ;; NOT evil-mode, some guy don't use evil-mode at all
     (toggle-input-method))))
