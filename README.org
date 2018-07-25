@@ -1,7 +1,7 @@
 #+TITLE: Doom emacs private module
 
 * About
-This is my emacs config as a plugin for the amazing hlissner/doom-emacs.
+This is my emacs config as a plugin for the amazing [[https://github.com/hlissner/doom-emacs][hlissner/doom-emacs]].
 
 * Why Doom Emacs ?
 
