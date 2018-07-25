@@ -21,6 +21,10 @@
 
   (setq find-ls-option '("-print0 | xargs -0 ls -ald" . "")))
 
+(after! dired-k
+  (setq dired-k-padding 1)
+  (setq dired-k-human-readable t))
+
 (after! projectile
   ;; global ignores
   (add-to-list 'projectile-globally-ignored-files ".DS_Store")
