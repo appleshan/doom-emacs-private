@@ -15,3 +15,9 @@
          ("C-r" . isearch-backward) ; ordinary backward search
          ("C-c m" . vr/mc-mark)  ; for multiple-cursors
          ))
+
+(def-package! real-auto-save
+  :config
+  (setq real-auto-save-interval 10) ;; in seconds
+  (add-hook 'org-mode-hook 'real-auto-save-mode)
+  (add-hook 'prog-mode-hook 'real-auto-save-mode))
