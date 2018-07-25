@@ -184,6 +184,7 @@
        :private
        appearance
        chinese
+       editor
        )
 
 (provide 'init)
