@@ -182,6 +182,7 @@
        (default +bindings +snippets +evil-commands)
 
        :private
+       core
        appearance
        chinese
        editor
