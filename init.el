@@ -184,6 +184,7 @@
        :private
        core
        appearance
+       navigation
        chinese
        editor
        orgmode
