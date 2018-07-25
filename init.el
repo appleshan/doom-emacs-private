@@ -188,6 +188,7 @@
        chinese
        editor
        orgmode
+       programming
        )
 
 (provide 'init)
