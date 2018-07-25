@@ -1,5 +1,20 @@
 ;;; config.el -*- lexical-binding: t; -*-
 
+;; company-mode
+(def-package! company
+  :config
+  (setq company-selection-wrap-around t
+        ;; do or don't automatically start completion after <idle time>
+        company-idle-delay 0.5
+        ;; at least 1 letters need to be there though
+        company-minimum-prefix-length 1
+        ;; show completion numbers for hotkeys
+        company-show-numbers t
+        ;; align annotations to the right
+        company-tooltip-align-annotations t
+        company-search-regexp-function #'company-search-flex-regexp)
+  )
+
 (def-package! visual-regexp
   ; :commands (vr/replace vr/query-replace) ; See the bind of init-visual-regexp-steroids.
   :defer t)
