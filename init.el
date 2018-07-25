@@ -186,6 +186,7 @@
        appearance
        chinese
        editor
+       orgmode
        )
 
 (provide 'init)
