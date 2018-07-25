@@ -1,8 +1,7 @@
 ;;; config.el -*- lexical-binding: t; -*-
 
 ;; company-mode
-(def-package! company
-  :config
+(after! company
   (setq company-selection-wrap-around t
         ;; do or don't automatically start completion after <idle time>
         company-idle-delay 0.5
