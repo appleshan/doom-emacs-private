@@ -17,3 +17,17 @@
           (add-hook 'org-mode-hook 'wakatime-mode)
           (add-hook 'prog-mode-hook 'wakatime-mode)
           ))))
+
+(defun +service/wakatime-dashboard ()
+  (interactive)
+  (browse-url "http://wakatime.com/dashboard"))
+
+
+;;
+;; Keybindings
+;;
+
+(map! :leader
+  (:desc "open" :prefix "o"
+    :desc "Wakatime dashboard"              :nv "W"  #'+service/wakatime-dashboard)
+  )
