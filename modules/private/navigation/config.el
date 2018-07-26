@@ -37,6 +37,7 @@
   (setq dired-k-padding 1)
   (setq dired-k-human-readable t))
 
+;; dired renaming like GUI file manager
 (def-package! dired-efap)
 
 (after! projectile
