@@ -24,6 +24,8 @@
   (setq dired-k-padding 1)
   (setq dired-k-human-readable t))
 
+(def-package! dired-efap)
+
 (after! projectile
   ;; global ignores
   (add-to-list 'projectile-globally-ignored-files ".DS_Store")
@@ -35,4 +37,5 @@
   :when (featurep! :feature evil +everywhere)
   :after dired
   :map dired-mode-map
-  :n "DEL" #'dired-up-directory)
+  :n "DEL" #'dired-up-directory
+  :n "R" #'dired-efap)
