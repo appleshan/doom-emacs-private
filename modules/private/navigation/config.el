@@ -41,6 +41,11 @@
 ;; dired renaming like GUI file manager
 (def-package! dired-efap)
 
+(after! dumb-jump
+  ;; If your project has multi-line method signatures you should use ag.
+  (setq dumb-jump-force-searcher 'rg)
+  (setq dumb-jump-prefer-searcher 'rg))
+
 (after! projectile
   ;; global ignores
   (add-to-list 'projectile-globally-ignored-files ".DS_Store")
