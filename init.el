@@ -105,7 +105,7 @@
       ;rgb               ; creating color strings
       ;tmux              ; an API for interacting with tmux
       ;upload            ; map local to remote projects via ssh/ftp
-      ;wakatime
+       wakatime
 
        :lang
       ;assembly          ; assembly for fun or debugging
@@ -190,6 +190,7 @@
        editor
        orgmode
        programming
+       service
        )
 
 (provide 'init)
