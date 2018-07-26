@@ -185,6 +185,7 @@
        core
        appearance
        navigation
+       notify
        chinese
        editor
        orgmode
