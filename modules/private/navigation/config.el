@@ -33,6 +33,7 @@
             (match-string 1))))))
   )
 
+;; Highlights dired buffer like k
 (after! dired-k
   (setq dired-k-padding 1)
   (setq dired-k-human-readable t))
