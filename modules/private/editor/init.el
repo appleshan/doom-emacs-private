@@ -54,3 +54,6 @@
 (global-set-key (kbd "M-<up>") '+editor|move-line-up)
 (global-set-key (kbd "M-<down>") '+editor|move-line-down)
 ;; }}
+
+;; 逗号后面自动加空格
+(global-set-key (kbd ",") #'(lambda () (interactive) (insert ", ")))
