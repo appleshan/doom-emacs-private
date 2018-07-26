@@ -1,6 +1,5 @@
 ;;; config.el -*- lexical-binding: t; -*-
 
-
 (after! dired
   ;; Show directory first
   ;; @see http://oremacs.com/2015/01/13/dired-options/
@@ -31,3 +30,9 @@
   ;; always ignore .class / .pyc files
   (add-to-list 'projectile-globally-ignored-file-suffixes ".class")
   (add-to-list 'projectile-globally-ignored-file-suffixes ".pyc"))
+
+(map!
+  :when (featurep! :feature evil +everywhere)
+  :after dired
+  :map dired-mode-map
+  :n "DEL" #'dired-up-directory)
