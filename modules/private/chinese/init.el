@@ -1,6 +1,7 @@
+;;; config.el -*- lexical-binding: t; -*-
 
 ;; {{ make IME compatible with evil-mode
-(defun chinese/evil-toggle-input-method ()
+(defun +chinese/evil-toggle-input-method ()
   "when toggle on input method, goto evil-insert-state. "
   (interactive)
 
