@@ -128,12 +128,3 @@
 ;  :config
 ;  (with-eval-after-load 'pyim
 ;    (pyim-greatdict-enable)))
-
-;;
-;; Keybindings
-;;
-
-(map!
-  (:after chinese
-    "C-s-\\" #'+chinese/evil-toggle-input-method)
-  )

@@ -1,4 +1,4 @@
-;;; config.el -*- lexical-binding: t; -*-
+;;; init.el -*- lexical-binding: t; -*-
 
 ;; {{ make IME compatible with evil-mode
 (defun +chinese/evil-toggle-input-method ()
@@ -27,4 +27,6 @@
 (defadvice evil-insert-state (around evil-insert-state-hack activate)
   ad-do-it
   (if current-input-method (message "IME on!")))
+
+(global-set-key (kbd "C-s-\\") '+chinese/evil-toggle-input-method)
 ;; }}
