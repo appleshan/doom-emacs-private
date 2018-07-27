@@ -1,4 +1,4 @@
-;;; config.el -*- lexical-binding: t; -*-
+;;; init.el -*- lexical-binding: t; -*-
 
 ;; 绑定扩展名到特定的模式
 (dolist (elt-cons '((".*rc\\'" . conf-mode)
@@ -77,3 +77,41 @@
         (switch-to-buffer (find-file-noselect filename nil nil))
       (message "NO README.org or README.md found!"))
     ))
+
+;;{{ 特殊字符与数字键交换
+(defvar *unshifted-special-chars-layout*
+  '(("1" "!") ; from -> to
+    ("2" "@")
+    ("3" "#")
+    ("4" "$")
+    ("5" "%")
+    ("6" "^")
+    ("7" "&")
+    ("8" "*")
+    ("9" "(")
+    ("0" ")")
+    ("!" "1")
+    ("@" "2")
+    ("#" "3")
+    ("$" "4")
+    ("%" "5")
+    ("^" "6")
+    ("&" "7")
+    ("*" "8")
+    ("(" "9")
+    (")" "0")))
+
+(defun mb-str-to-unibyte-char (s)
+  "Translate first multibyte char in s to internal unibyte representation."
+  (multibyte-char-to-unibyte (string-to-char s)))
+
+(defun remap-keyboard (mapping)
+  "Setup keyboard translate table using a list of pairwise key-mappings."
+  (mapcar
+   (lambda (mb-string-pair)
+     (apply #'keyboard-translate
+        (mapcar #'mb-str-to-unibyte-char mb-string-pair)))
+   mapping))
+
+(remap-keyboard *unshifted-special-chars-layout*)
+;;}}
