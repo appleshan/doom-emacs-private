@@ -1,5 +1,7 @@
 ;;; config.el -*- lexical-binding: t; -*-
 
+(load! "+ui")
+
 ;; Discover key bindings and their meaning for the current Emacs major mode
 (def-package! discover-my-major)
 

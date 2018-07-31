@@ -8,7 +8,6 @@
 
 ;; ------------- Load Personal Modules --------------
 (load! "+bindings")
-(load! "+ui")
 
 (provide 'config)
 
