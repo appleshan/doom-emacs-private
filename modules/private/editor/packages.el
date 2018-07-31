@@ -1,7 +1,5 @@
 ;;; packages.el -*- lexical-binding: t; -*-
 
-(package! company)
-
 (package! multiple-cursors)
 
 ;; 可视化正则匹配
