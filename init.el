@@ -181,6 +181,7 @@
        ;; your own modules.
        (default +bindings +snippets +evil-commands)
 
+       ;;------------- Load Personal Modules --------------
        :private
        core
        appearance

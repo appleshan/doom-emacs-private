@@ -6,9 +6,6 @@
     user-full-name "Apple Shan")
 (setq auth-sources '("~/.authinfo"))
 
-;; ------------- Load Personal Modules --------------
-(load! "+bindings")
-
 (provide 'config)
 
 ;;; config.el ends here
