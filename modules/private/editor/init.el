@@ -1,8 +1,8 @@
 ;;; init.el -*- lexical-binding: t; -*-
 
-(setq-default fill-column 70)
+(setq-default fill-column 79)
 
-(setq-default whitespace-line-column 70)
+(setq-default whitespace-line-column 80)
 (setq-default whitespace-style '(face
                                  indentation
                                  tabs tab-mark
