@@ -19,7 +19,9 @@ This is my emacs config as a plugin for the amazing [[https://github.com/hlissne
 First ensure that you have installed doom:
 
 #+BEGIN_SRC shell
-$ git clone -b develop --single-branch https://github.com/hlissner/doom-emacs.git ~/.emacs.d
+$ git clone -b develop \
+            --single-branch \
+            https://github.com/hlissner/doom-emacs.git ~/.emacs.d
 $ cd ~/.emacs.d
 $ make
 $ make doctor
