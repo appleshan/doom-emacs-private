@@ -80,3 +80,22 @@
   ;; * Moving a task to NEXT removes WAITING, CANCELLED, and HOLD tags
   ;; * Moving a task to DONE removes WAITING, CANCELLED, and HOLD tags
   )
+
+(after! org-crypt
+  ;; 設定要加密的 tag 標籤為 secret
+  (setq org-crypt-tag-matcher "secret")
+
+  ;; 设置 secret 标签不参与继承,避免造成重複加密
+  ;; (但是子項目還是會被加密喔)
+  (setq org-tags-exclude-from-inheritance (quote ("secret")))
+
+  ;; GPG key to use for encryption
+  ;; Either the Key ID or set to nil to use symmetric encryption.
+  (setq org-crypt-key nil)
+
+  ;; 要想解密 headline,则需要在光标定位到加密内容处,然后执行`M-x org-decrypt-entry’
+  ;; 默认情况下, Emacs 会定时自动保持在编辑的文件,
+  ;; 若此时在编辑的文件为密码文件且内容已经被解密,则可能存在将解密后的文本保存
+  ;; 到磁盘上, 从而造成敏感信息泄露的情况,因此一般我们在编辑 crypt 文件时,取消
+  ;; 自动保存功能
+  (setq org-crypt-disable-auto-save t))
