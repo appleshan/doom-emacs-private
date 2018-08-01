@@ -123,3 +123,32 @@
                                         ("B." . "-")
                                         ("a." . "-")
                                         ("b." . "-"))))
+
+(after! org-agenda
+  ;; 设置agenda的数据来源
+  ;; org-agenda-files中的元素还可以是目录，这时目录下的所有匹配
+  ;; `org-agenda-file-regexp’的文件都自动加入 agenda .
+  (setq org-agenda-files
+    (list
+        (concat org-gtd-dir "inbox.org")
+        (concat org-gtd-dir "project.org")
+        (concat org-gtd-dir "task.org")
+        (concat org-gtd-dir "finished.org")
+        (concat org-gtd-dir "trash.org")
+        (concat org-gtd-dir "memorial-day.org")
+        ))
+  )
+
+(after! org-faces
+  (setq org-todo-keyword-faces
+        (quote (("TODO" :foreground "red" :weight bold)
+                ("STARTED" :foreground "blue" :weight bold)
+                ("WAITING" :foreground "orange" :weight bold)
+                ("APPT" :foreground "magenta" :weight bold)
+                ("DONE" :foreground "forest green" :weight bold)
+                ("CANCELLED" :foreground "forest green" :weight bold)
+                ("DEFERRED" :foreground "forest green" :weight bold)
+                ("MEETING" :foreground "forest green" :weight bold)
+                ("PHONE" :foreground "forest green" :weight bold))))
+
+  )
