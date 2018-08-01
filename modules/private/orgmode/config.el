@@ -103,3 +103,23 @@
   ;; 到磁盘上, 从而造成敏感信息泄露的情况,因此一般我们在编辑 crypt 文件时,取消
   ;; 自动保存功能
   (setq org-crypt-disable-auto-save t))
+
+(after! org-list
+  ;; 允许使用字母作为list bullet
+  (setq org-list-allow-alphabetical t)
+
+  ;; 自动切换list bullet
+  ;; 若每个层级的list都使用同样的list bullet,则可能造成难于区分哪个list entry
+  ;; 是属于哪个层级的. org-mode提供了当改变list层级时自动改变list bullet的机制
+  (setq org-list-demote-modify-bullet '(("+" . "-")
+                                        ("*" . "-")
+                                        ("1." . "-")
+                                        ("1)" . "-")
+                                        ("A)" . "-")
+                                        ("B)" . "-")
+                                        ("a)" . "-")
+                                        ("b)" . "-")
+                                        ("A." . "-")
+                                        ("B." . "-")
+                                        ("a." . "-")
+                                        ("b." . "-"))))
