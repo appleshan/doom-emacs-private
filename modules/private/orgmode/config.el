@@ -133,3 +133,6 @@
                 ("PHONE" :foreground "forest green" :weight bold))))
 
   )
+
+(def-package! org-super-agenda
+  :config (org-super-agenda-mode))
