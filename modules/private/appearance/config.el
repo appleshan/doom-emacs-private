@@ -1,6 +1,8 @@
 ;;; config.el -*- lexical-binding: t; -*-
 
+;; ** loading
 (load! "+ui")
+(load! "+popup")
 
 ;; Discover key bindings and their meaning for the current Emacs major mode
 (def-package! discover-my-major)
