@@ -10,7 +10,9 @@
                                  newline newline-mark
                                  trailing lines-tail))
 
-(add-hook   'find-file-hook #'whitespace-mode)
+;; 把空格和回车符号可视化
+;(add-hook   'find-file-hook #'whitespace-mode)
+
 (add-hook 'before-save-hook #'whitespace-cleanup)
 
 ;; 绑定扩展名到特定的模式
