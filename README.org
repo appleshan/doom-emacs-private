@@ -5,10 +5,10 @@ This is my emacs config as a plugin for the amazing [[https://github.com/hlissne
 
 * Why Doom Emacs ?
 
-- it is blazing fast
-- it is well thought
-- its community (on discord) is most friendly
-- it's maintained by one developer, who keeps a vision and everything consistent
+ - it is blazing fast
+ - it is well thought
+ - its community (on discord) is most friendly
+ - it's maintained by one developer, who keeps a vision and everything consistent
 
 * Prerequisites
 
