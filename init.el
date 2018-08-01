@@ -194,6 +194,9 @@
        service
        )
 
+(setq custom-file (expand-file-name "local/custom.el" doom-emacs-dir))
+(load custom-file 'no-error 'no-message)
+
 (provide 'init)
 
 ;;; init.el ends here
