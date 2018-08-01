@@ -81,6 +81,10 @@
   ;; * Moving a task to DONE removes WAITING, CANCELLED, and HOLD tags
   )
 
+;; org-crypt 加密
+;; @see https://coldnew.github.io/4bb1df06/
+;; 使用`org-crypt’库,可以自动将带”:secret:” tag 的 headline ,在写入时加密存储.
+;; 该功能对于想要将密码等隐私消息存入org文件带来便利.
 (after! org-crypt
   ;; 設定要加密的 tag 標籤為 secret
   (setq org-crypt-tag-matcher "secret")
