@@ -71,3 +71,11 @@
   (setq real-auto-save-interval 10) ;; in seconds
   (add-hook 'org-mode-hook 'real-auto-save-mode)
   (add-hook 'prog-mode-hook 'real-auto-save-mode))
+
+(map! :nv "C-u" #'evil-scroll-up
+
+      (:after company
+        (:map company-active-map
+          "C-j" #'company-select-next
+          "C-k" #'company-select-previous))
+)
