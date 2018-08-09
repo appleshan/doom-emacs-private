@@ -192,6 +192,8 @@
        orgmode
        programming
        lang-python
+       lang-lsp
+       lsp-python
        service
        )
 
