@@ -1,8 +1,5 @@
 ;;; config.el -*- lexical-binding: t; -*-
 
-(after! python
-  (add-hook! 'python-mode-hook (add-hook! 'before-save-hook 'delete-trailing-whitespace)))
-
 (after! pipenv
   (setq pipenv-projectile-after-switch-function
         #'pipenv-projectile-after-switch-extended)
@@ -17,3 +14,8 @@
         :desc "Pipenv Run" :nv "r" #'pipenv-run
         :desc "Pipenv Shell" :nv "s" #'pipenv-shell
         ))
+
+(def-package! blacken
+  :commands blacken-mode
+  :init
+  (add-hook 'python-mode-hook 'blacken-mode))
