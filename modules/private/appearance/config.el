@@ -4,6 +4,10 @@
 (load! "+ui")
 (load! "+popup")
 
+(def-package! doom-modeline
+  :defer t
+  :hook (after-init . doom-modeline-init))
+
 ;; Discover key bindings and their meaning for the current Emacs major mode
 (def-package! discover-my-major)
 
