@@ -1,5 +1,8 @@
 ;;; packages.el -*- lexical-binding: t; -*-
 
+(package! company-english-helper
+  :recipe (:fetcher github :repo "manateelazycat/company-english-helper"))
+
 (package! multiple-cursors)
 
 ;; 可视化正则匹配

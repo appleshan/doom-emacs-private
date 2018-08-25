@@ -14,6 +14,9 @@
         company-search-regexp-function #'company-search-flex-regexp)
   )
 
+(def-package! company-english-helper
+  :init (require 'company-english-helper))
+
 (def-package! multiple-cursors
   :init
   (setq mc/list-file (concat doom-cache-dir ".mc-lists.el"))
