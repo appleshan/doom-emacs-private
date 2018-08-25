@@ -52,6 +52,8 @@
   (define-key lsp-ui-mode-map [remap xref-find-definitions] #'lsp-ui-peek-find-definitions)
   (define-key lsp-ui-mode-map [remap xref-find-references] #'lsp-ui-peek-find-references)
 
+  (+lsp|lsp-sync-peek-face)
+
   (setq lsp-ui-sideline-enable nil
         lsp-enable-completion-at-point t
         lsp-ui-doc-position 'at-point
@@ -71,3 +73,25 @@
   :config
   (set! :company-backend 'lsp-mode '(company-lsp))
   (setq company-lsp-enable-recompletion t))
+
+(defun +lsp|lsp-sync-peek-face ()
+  "Synchronize the face used in `lsp-ui' peek window according to the theme."
+  (set-face-attribute 'lsp-ui-peek-list nil
+                      :background (face-attribute 'hl-line :background nil t))
+  (set-face-attribute 'lsp-ui-peek-peek nil
+                      :background (face-attribute 'hl-line :background nil t))
+  (set-face-attribute 'lsp-ui-peek-selection nil
+                      :background (face-attribute 'highlight :background nil t)
+                      :foreground (face-attribute 'default :foreground nil t))
+  (set-face-attribute 'lsp-ui-peek-filename nil
+                      :foreground (face-attribute 'font-lock-constant-face
+                                                  :foreground nil t))
+  (set-face-attribute 'lsp-ui-peek-highlight nil
+                      :background (face-attribute 'highlight :background nil t)
+                      :foreground (face-attribute 'highlight :foreground nil t)
+                      :distant-foreground (face-attribute 'highlight
+                                                          :foreground nil t))
+  (set-face-attribute 'lsp-ui-peek-header nil
+                      :background (face-attribute 'highlight :background nil t)
+                      :foreground (face-attribute 'default :foreground nil t))
+  )
