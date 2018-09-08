@@ -16,8 +16,7 @@
     (when (eq system-type 'gnu/linux)
       ;; Remove mu4e if on linux
       (require 'sauron)
-      (setq sauron-modules (remove 'sauron-mu4e sauron-modules))
-      (setq sauron-modules (remove 'sauron-twittering sauron-modules)))
+      (setq sauron-modules '(sauron-org sauron-notifications)))
 
     (setq sauron-max-line-length 120
           sauron-watch-patterns '("dakrone" "thnetos" "okenezak")
