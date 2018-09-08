@@ -112,8 +112,8 @@
     (setq pyim-page-length 9)
 
     ;; 让 Emacs 启动时自动加载 pyim 词库
-    (add-hook 'emacs-startup-hook
-              #'(lambda () (pyim-restart-1 t)))
+    ;(add-hook 'emacs-startup-hook
+    ;          #'(lambda () (pyim-restart-1 t)))
 
     ;; 禁用 dabberv 中文补全
     (setq pyim-company-complete-chinese-enable nil)
