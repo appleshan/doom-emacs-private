@@ -1,5 +1,8 @@
 ;;; config.el -*- lexical-binding: t; -*-
 
+(after! projectile
+  (setq projectile-require-project-root t))
+
 (after! yasnippet
   ;; Remove Yasnippet's default tab key binding
   (define-key yas-minor-mode-map (kbd "<tab>") nil)
