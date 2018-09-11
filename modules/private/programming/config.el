@@ -1,5 +1,19 @@
 ;;; config.el -*- lexical-binding: t; -*-
 
+;; pretty-magit
+;; @see http://www.modernemacs.com/post/pretty-magit/
+(after! magit
+  (def-package! pretty-magit
+    :load-path "~/.doom.d/local/pretty-magit/"
+    :config
+    (pretty-magit "Feature" ? '(:foreground "slate gray" :height 1.0 :family "FontAwesome"))
+    (pretty-magit "Add" ? '(:foreground "#375E97" :height 1.0 :family "FontAwesome"))
+    (pretty-magit "Fix" ? '(:foreground "#FB6542" :height 1.0 :family "FontAwesome"))
+    (pretty-magit "Clean" ? '(:foreground "#FFBB00" :height 1.0 :family "FontAwesome"))
+    (pretty-magit "Docs" ? '(:foreground "#3F681C" :height 1.0 :family "FontAwesome"))
+    (pretty-magit "master" ? '(:box nil :height 1.0 :family "github-octicons") t)
+    (pretty-magit "origin" ? '(:box nil :height 1.0 :family "github-octicons") t)))
+
 (after! projectile
   (setq projectile-require-project-root t))
 
