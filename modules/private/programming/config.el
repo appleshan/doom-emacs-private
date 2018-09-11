@@ -14,6 +14,10 @@
     (pretty-magit "master" ? '(:box nil :height 1.0 :family "github-octicons") t)
     (pretty-magit "origin" ? '(:box nil :height 1.0 :family "github-octicons") t)))
 
+;; A pretty git graph drawn with Emacs lisp.
+;; M-x magit-pg-repo says bye-bye to the server
+(def-package! magit-pretty-graph)
+
 (after! projectile
   (setq projectile-require-project-root t))
 
