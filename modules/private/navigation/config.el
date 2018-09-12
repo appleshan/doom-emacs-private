@@ -47,6 +47,15 @@
 ;; dired renaming like GUI file manager
 (def-package! dired-efap)
 
+(def-package! dired-single
+  :config
+  (defun +dired|single-magic-buffer ()
+    (interactive)
+    (dired-single-magic-buffer default-directory))
+  (defun +dired|show-current-dir ()
+    (interactive)
+    (message "Current directory is: %s" default-directory)))
+
 (after! dumb-jump
   ;; If your project has multi-line method signatures you should use ag.
   (setq dumb-jump-force-searcher 'rg)
@@ -62,7 +71,14 @@
 (map!
   :when (featurep! :feature evil +everywhere)
   :after dired
+  :n [(f5)] #'dired-single-magic-buffer
+  :n [(meta f5)] #'dired-single-toggle-buffer-name
+  :n [(shift f5)] #'+dired|show-current-dir
+  :n [(control f5)] #'+dired|single-magic-buffer
   :map dired-mode-map
-  :n "DEL" #'dired-up-directory
+  :n [return] #'dired-single-buffer
+  :n [mouse-1] #'dired-single-buffer-mouse
+  :n "^" #'dired-single-up-directory
+  :n "DEL" #'dired-single-up-directory
   :n "R" #'dired-efap
   :n "Z" #'+dired|get-dir-size)
