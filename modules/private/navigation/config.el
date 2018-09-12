@@ -35,9 +35,10 @@
 
 (after! dired-x
   :config
-  (defun enable-dired-omit-mode () (dired-omit-mode 1)) ; Turn on Omit mode.
-  (add-hook 'dired-mode-hook 'enable-dired-omit-mode)
-  (setq dired-omit-files (concat dired-omit-files "\\|^\\..+$")))
+  (defun enable-dired-omit-mode ()
+    (setq dired-omit-files (concat dired-omit-files "\\|^\\..+$")) ; omit all hidden file which starts with `.'
+    (dired-omit-mode 1)) ; initially omit unintrested files
+  (add-hook 'dired-mode-hook 'enable-dired-omit-mode))
 
 ;; Highlights dired buffer like k
 (after! dired-k
