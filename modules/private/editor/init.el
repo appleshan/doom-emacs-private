@@ -20,6 +20,7 @@
                     ("\\.myclirc\\'" . conf-mode)
                     (".xprofile'" . conf-mode)
                     ("torrc'" . conf-mode)
+                    ("mirrorlist" . conf-mode)
                     ("\\.lrc\\'" . emms-lyrics-mode)
                     ("\\.org\\'" . org-mode)
                     ("\\.cron\\(tab\\)?\\'" . crontab-mode)
