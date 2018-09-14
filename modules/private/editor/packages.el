@@ -2,6 +2,8 @@
 
 (package! aggressive-indent)
 
+(package! auto-sudoedit)
+
 (package! company-english-helper
   :recipe (:fetcher github :repo "manateelazycat/company-english-helper"))
 
