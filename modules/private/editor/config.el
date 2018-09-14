@@ -1,5 +1,24 @@
 ;;; config.el -*- lexical-binding: t; -*-
 
+(def-package! aggressive-indent
+  :config
+  (dolist (hook (list
+                 'emacs-lisp-mode-hook
+                 'lisp-interaction-mode-hook
+                 'lisp-mode-hook
+                 'java-mode-hook
+                 'sh-mode-hook
+                 'js2-mode-hook
+                 'js-mode-hook
+                 'html-mode-hook
+                 'css-mode-hook
+                 'go-mode-hook
+                 'slime-repl-mode-hook
+                 'cmake-mode-hook
+                 'web-mode-hook
+                 ))
+    (add-hook hook (lambda () (aggressive-indent-mode 1)))))
+
 ;; company-mode
 (after! company
   (setq company-selection-wrap-around t
