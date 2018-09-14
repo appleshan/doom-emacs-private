@@ -10,6 +10,11 @@
 
   (setq find-ls-option '("-print0 | xargs -0 ls -ald" . ""))
 
+  (add-hook 'dired-mode-hook #'(lambda ()
+    (dired-hide-details-mode -1) ;进入时显示详细信息
+    (define-key evil-normal-state-local-map (kbd "<tab>") #'dired-hide-details-mode)
+    ))
+
   ;; @see http://oremacs.com/2015/01/12/dired-file-size/
   (defun +dired|get-dir-size ()
     (interactive)
