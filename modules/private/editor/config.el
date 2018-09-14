@@ -17,7 +17,14 @@
                  'cmake-mode-hook
                  'web-mode-hook
                  ))
-    (add-hook hook (lambda () (aggressive-indent-mode 1)))))
+    (add-hook hook (lambda () (aggressive-indent-mode 1))))
+
+  ;; Disable aggressive indent in some mode.
+  (dolist (hook (list
+                 'python-mode-hook
+                 ))
+    (add-hook hook (lambda () (aggressive-indent-mode -1))))
+  )
 
 ;; company-mode
 (after! company
