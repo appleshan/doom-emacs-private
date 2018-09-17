@@ -1,5 +1,13 @@
 ;;; config.el -*- lexical-binding: t; -*-
 
+(after! flycheck
+  (global-flycheck-mode -1)
+  ;; I don't like `global-flycheck-mode', some mode, such as elisp mode don't need.
+  (dolist (hook (list
+                 'python-mode-hook
+                 ))
+    (add-hook hook '(lambda () (flycheck-mode 1)))))
+
 ;; pretty-magit
 ;; @see http://www.modernemacs.com/post/pretty-magit/
 (after! magit
