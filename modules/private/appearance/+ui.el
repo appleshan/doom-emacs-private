@@ -18,10 +18,10 @@
 
 ;; Fonts
 (setq
-      doom-font (font-spec :family "DejaVu Sans Mono" :size 16)
-      doom-variable-pitch-font (font-spec :family "DejaVu Sans Mono")
-      doom-unicode-font (font-spec :family "DejaVu Sans Mono")
-      doom-big-font (font-spec :family "DejaVu Sans Mono" :size 19))
+      doom-font (font-spec :family "Hack" :size 16)
+      doom-variable-pitch-font (font-spec :family "Hack")
+      doom-unicode-font (font-spec :family "Microsoft Yahei Mono")
+      doom-big-font (font-spec :family "Hack" :size 19))
 
 ;; Modeline
 (setq +doom-modeline-buffer-file-name-style 'relative-from-project)
