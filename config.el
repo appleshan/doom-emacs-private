@@ -1,5 +1,8 @@
 ;;; ~/.doom.d/config.el -*- lexical-binding: t; -*-
 
+(when (fboundp 'set-charset-priority)
+  (set-charset-priority 'emacs))
+
 ;; User Credentials
 (setq
     user-mail-address "apple.shan@gmail.com"
