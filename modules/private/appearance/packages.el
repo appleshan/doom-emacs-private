@@ -4,6 +4,5 @@
 (package! discover-my-major)
 (package! on-screen)
 
-(package! mode-icons)
-(package! tabbar)
-(package! tabbar-ruler)
+(package! awesome-tab
+  :recipe (:fetcher github :repo "appleshan/awesome-tab"))
