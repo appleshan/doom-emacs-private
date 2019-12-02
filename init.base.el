@@ -9,7 +9,7 @@
 
        :ui
        doom
-       doom-modeline
+       modeline
 
        :emacs
        dired
