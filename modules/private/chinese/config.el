@@ -67,10 +67,9 @@
   :config
   (progn
     (global-pangu-spacing-mode -1)
+
     ;; Always insert `real' space in org-mode.
-    (add-hook 'org-mode-hook
-              '(lambda ()
-                 (set (make-local-variable 'pangu-spacing-real-insert-separtor) t)))
+    (setq-hook! 'org-mode-hook pangu-spacing-real-insert-separtor t)
 
     (defun enable-pangu-spacing-when-buffer-not-large ()
       "when buffer is not large, turn on it"
