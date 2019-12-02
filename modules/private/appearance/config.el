@@ -41,6 +41,21 @@
     (define-key evil-normal-state-map (kbd ",th") 'awesome-tab-backward))
   )
 
+(after! doom-modeline
+  (remove-hook 'display-battery-mode-hook #'doom-modeline-override-battery-modeline)
+  (remove-hook 'doom-modeline-mode-hook #'doom-modeline-override-battery-modeline)
+
+  ; Define your custom doom-modeline
+  (doom-modeline-def-modeline 'my-simple-line
+    '(bar workspace-name window-number matches buffer-info remote-host buffer-position parrot selection-info)
+    '(misc-info minor-modes input-method buffer-encoding major-mode process vcs checker))
+  ; Set it to default using the doom-modeline-mode-hook:
+  (defun setup-custom-doom-modeline ()
+    (doom-modeline-set-modeline 'my-simple-line 'default))
+
+  (add-hook 'doom-modeline-mode-hook 'setup-custom-doom-modeline)
+  )
+
 ;;
 ;; Keybindings
 ;;
