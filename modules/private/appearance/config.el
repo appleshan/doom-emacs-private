@@ -26,7 +26,7 @@
   (define-key awesome-tab-mode-map awesome-tab-prefix-key nil)
   (setq awesome-tab-background-color "#2e3434"
         awesome-tab-cycle-scope 'tabs ; Navigate through visible tabs only.
-        awesome-tab-style "wave" ; alternate
+        awesome-tab-style "alternate" ; Rectilinear Tabs (default are Rounded).
         awesome-tab-height 22
         awesome-tab-label-fixed-length 0
         awesome-tab-display-sticky-function-name nil)
