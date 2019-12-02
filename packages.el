@@ -1,5 +1,5 @@
 ;; -*- no-byte-compile: t; -*-
-;;; projects-private/doom-emacs-private/packages.el
+;;; .doom.d/packages.el
 
 ;;; Examples:
 ;; (package! some-package)
