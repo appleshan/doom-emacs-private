@@ -4,4 +4,5 @@
 (package! on-screen)
 
 (package! awesome-tab
-  :recipe (:fetcher github :repo "appleshan/awesome-tab"))
+  :recipe (:host github :repo "appleshan/awesome-tab" :files (:defaults "*")))
+
