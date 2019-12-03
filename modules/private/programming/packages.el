@@ -1,4 +1,4 @@
 ;;; packages.el -*- lexical-binding: t; -*-
 
 (package! magit-pretty-graph
-  :recipe (:fetcher github :repo "georgek/magit-pretty-graph"))
+  :recipe (:host github :repo "georgek/magit-pretty-graph" :files (:defaults "*")))
