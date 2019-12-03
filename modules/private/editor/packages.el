@@ -7,7 +7,7 @@
 (package! company-english-helper
   :recipe (:host github :repo "manateelazycat/company-english-helper" :files (:defaults "*")))
 
-;(package! multiple-cursors)
+(package! multiple-cursors)
 
 ;; 可视化正则匹配
 ;; https://github.com/benma/visual-regexp.el
