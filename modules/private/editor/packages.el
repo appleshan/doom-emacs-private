@@ -5,7 +5,7 @@
 (package! auto-sudoedit)
 
 (package! company-english-helper
-  :recipe (:fetcher github :repo "manateelazycat/company-english-helper"))
+  :recipe (:host github :repo "manateelazycat/company-english-helper" :files (:defaults "*")))
 
 ;(package! multiple-cursors)
 

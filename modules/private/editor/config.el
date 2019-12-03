@@ -47,7 +47,9 @@
   )
 
 (def-package! company-english-helper
-  :init (require 'company-english-helper))
+  :init (require 'company-english-helper)
+  :config
+  (setq company-english-helper-fuzz-search-p t))
 
 (def-package! multiple-cursors
   :init
