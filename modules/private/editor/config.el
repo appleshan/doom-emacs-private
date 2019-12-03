@@ -51,6 +51,10 @@
   :config
   (setq company-english-helper-fuzz-search-p t))
 
+;;;useage:
+;; M-x 后输入 mc-mode
+;; 如果开启了 evil 最好先按 i 进入普通模式
+;; 然后使用C-c C-> 全选中后，就可以随意编排了
 (def-package! multiple-cursors
   :init
   (setq mc/list-file (concat doom-cache-dir ".mc-lists.el"))
