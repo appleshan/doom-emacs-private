@@ -41,9 +41,9 @@
   (setq dired-k-human-readable t))
 
 ;; dired renaming like GUI file manager
-(def-package! dired-efap)
+(use-package! dired-efap)
 
-(def-package! dired-single
+(use-package! dired-single
   :config
   (defun +dired|single-magic-buffer ()
     (interactive)

@@ -1,6 +1,6 @@
 ;;; config.el -*- lexical-binding: t; -*-
 
-(def-package! alert
+(use-package! alert
   :config
   (when (eq system-type 'darwin)
     (setq alert-default-style 'notifier))
@@ -8,7 +8,7 @@
     (setq alert-default-style 'notifications)))
 
 ;; The all-seeing eye of Sauron
-(def-package! sauron
+(use-package! sauron
   ;:commands (sauron-toggle-hide-show)
   ;:bind ("M-o" . sauron-toggle-hide-show)
   :init

@@ -11,7 +11,7 @@
 ;; pretty-magit
 ;; @see http://www.modernemacs.com/post/pretty-magit/
 (after! magit
-  (def-package! pretty-magit
+  (use-package! pretty-magit
     :load-path "~/.doom.d/local/pretty-magit/"
     :config
     (pretty-magit "Feature" ? '(:foreground "slate gray" :height 1.0 :family "FontAwesome"))
@@ -27,7 +27,7 @@
 
 ;; A pretty git graph drawn with Emacs lisp.
 ;; M-x magit-pg-repo says bye-bye to the server
-(def-package! magit-pretty-graph)
+(use-package! magit-pretty-graph)
 
 (after! projectile
   (setq projectile-require-project-root t))

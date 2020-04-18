@@ -134,10 +134,10 @@
 
   )
 
-(def-package! org-super-agenda
+(use-package! org-super-agenda
   :config (org-super-agenda-mode))
 
-(def-package! secretaria
+(use-package! secretaria
   :after (alert f s)
   :config
   ;; use this for getting a reminder every 30 minutes of those tasks scheduled

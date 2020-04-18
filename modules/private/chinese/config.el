@@ -4,7 +4,7 @@
   "Buffer whose size beyond it will have a different behavior for the efficiency")
 
 ;; Chinese calendar
-(def-package! cal-china-x
+(use-package! cal-china-x
   ;:defer t
   ;:init (require 'cal-china-x)
   :commands cal-china-x-setup
@@ -63,7 +63,7 @@
                   holiday-other-holidays))
     ))
 
-(def-package! pangu-spacing
+(use-package! pangu-spacing
   :config
   (progn
     (global-pangu-spacing-mode -1)
@@ -79,7 +79,7 @@
     (dolist (i '(org-mode-hook prog-mode-hook text-mode-hook))
       (add-hook i 'enable-pangu-spacing-when-buffer-not-large))))
 
-(def-package! pyim
+(use-package! pyim
   :init
   (setq pyim-directory (expand-file-name ".local/pyim/" user-emacs-directory)
         pyim-dcache-directory (expand-file-name "dcache/" pyim-directory)
@@ -118,12 +118,12 @@
     (setq pyim-company-complete-chinese-enable nil)
     ))
 
-(def-package! pyim-basedict
+(use-package! pyim-basedict
   :config
   (with-eval-after-load 'pyim
     (pyim-basedict-enable)))
 
-;(def-package! pyim-greatdict
+;(use-package! pyim-greatdict
 ;  :config
 ;  (with-eval-after-load 'pyim
 ;    (pyim-greatdict-enable)))

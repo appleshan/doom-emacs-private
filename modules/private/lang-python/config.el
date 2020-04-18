@@ -15,7 +15,7 @@
         :desc "Pipenv Shell" :nv "s" #'pipenv-shell
         ))
 
-(def-package! blacken
+(use-package! blacken
   :commands blacken-mode
   :init
   (add-hook 'python-mode-hook 'blacken-mode))

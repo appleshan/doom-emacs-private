@@ -1,7 +1,7 @@
 ;;; config.el -*- lexical-binding: t; -*-
 
 ;; * Python
-(def-package! lsp-python
+(use-package! lsp-python
   :commands (lsp-python-enable)
   :init (add-hook! python-mode #'lsp-python-enable)
   :config

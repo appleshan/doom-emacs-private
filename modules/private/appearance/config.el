@@ -5,13 +5,13 @@
 (load! "+popup")
 
 ;; Discover key bindings and their meaning for the current Emacs major mode
-(def-package! discover-my-major)
+(use-package! discover-my-major)
 
-(def-package! on-screen
+(use-package! on-screen
   :init (require 'on-screen)
   :config (on-screen-global-mode +1))
 
-(def-package! awesome-tab
+(use-package! awesome-tab
   :config
   (set-face-attribute 'awesome-tab-default nil
     :height 1.1)

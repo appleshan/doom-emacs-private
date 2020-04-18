@@ -1,6 +1,6 @@
 ;;; config.el -*- lexical-binding: t; -*-
 
-(def-package! aggressive-indent
+(use-package! aggressive-indent
   :config
   (dolist (hook (list
                  'emacs-lisp-mode-hook
@@ -27,7 +27,7 @@
   )
 
 ;; 这个包会自动检测是否有权限编辑，没有权限就自动调用sudo.
-(def-package! auto-sudoedit
+(use-package! auto-sudoedit
   :config
   ;; Just hook on `find-file-hook', don't hook `dired-mode-hook', it's unnecessary.
   (add-hook 'find-file-hook (lambda () (auto-sudoedit-mode 1))))
@@ -46,7 +46,7 @@
         company-search-regexp-function #'company-search-flex-regexp)
   )
 
-(def-package! company-english-helper
+(use-package! company-english-helper
   :init (require 'company-english-helper)
   :config
   (setq company-english-helper-fuzz-search-p t))
@@ -55,7 +55,7 @@
 ;; M-x 后输入 mc-mode
 ;; 如果开启了 evil 最好先按 i 进入普通模式
 ;; 然后使用C-c C-> 全选中后，就可以随意编排了
-(def-package! multiple-cursors
+(use-package! multiple-cursors
   :init
   (setq mc/list-file (concat doom-cache-dir ".mc-lists.el"))
   :bind (;; multiple-cursors
@@ -91,11 +91,11 @@
         (mc/mark-all-symbols-like-this)))
   ))
 
-(def-package! visual-regexp
+(use-package! visual-regexp
   ; :commands (vr/replace vr/query-replace) ; See the bind of init-visual-regexp-steroids.
   :defer t)
 
-(def-package! visual-regexp-steroids
+(use-package! visual-regexp-steroids
   :commands (vr/select-replace vr/select-query-replace)
   :defer t
   :bind (("C-M-%" . vr/replace)
@@ -107,7 +107,7 @@
          ("C-c m" . vr/mc-mark)  ; for multiple-cursors
          ))
 
-(def-package! real-auto-save
+(use-package! real-auto-save
   :config
   (setq real-auto-save-interval 10) ;; in seconds
   (add-hook 'org-mode-hook 'real-auto-save-mode)
