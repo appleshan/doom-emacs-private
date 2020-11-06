@@ -5,5 +5,5 @@
   (dolist (item (split-string-and-unquote path ":"))
     (add-to-list 'exec-path item))
   (setenv "PATH" path)
-  (setenv "HOME" "/home/appleshan")
-  (setenv "JAR_PATH" "/opt/java" ))
+  (setenv "HOME" "/home/alecshan")
+  (setenv "JAR_PATH" "/home/alecshan/bin/java" ))
