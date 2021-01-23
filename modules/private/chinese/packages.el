@@ -2,6 +2,5 @@
 
 (package! cal-china-x)
 (package! pangu-spacing)
-(package! pyim)
-(package! pyim-basedict)
-;(package! pyim-greatdict :recipe (:fetcher github :repo "tumashu/pyim-greatdict"))
+(package! rime
+  :recipe (:host github :repo "DogLooksGood/emacs-rime" :files (:defaults "*")))
