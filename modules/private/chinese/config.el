@@ -82,16 +82,20 @@
 (use-package! rime
   :commands (toggle-input-method)
   :bind
-  (:map
-   rime-active-mode-map
-   ("<tab>" . 'rime-inline-ascii)
-   :map rime-mode-map
-   ("C-`" . 'rime-send-keybinding)
-   ("M-j" . 'rime-force-enable))
-  :config
-  ((rime-translate-keybindings '("C-f" "C-b" "C-n" "C-p" "C-g"))
-   (rime-inline-ascii-holder ?a)
-   (default-input-method "rime")
-   (rime-cursor "|")
-   (rime-show-candidate 'message)
-   (rime-title (char-to-string 12563))))
+  (:map rime-active-mode-map
+        ("<tab>" . 'rime-inline-ascii))
+  (:map rime-mode-map
+        ("C-`" . 'rime-send-keybinding)
+        ("M-j" . 'rime-force-enable))
+  :custom
+  (rime-user-data-dir "~/.config/fcitx/rime/")
+  (rime-disable-predicates '(rime-predicate-prog-in-code-p
+                             rime-predicate-after-alphabet-char-p))
+  (rime-inline-predicates '(rime-predicate-space-after-cc-p
+                            rime-predicate-current-uppercase-letter-p))
+  (rime-translate-keybindings '("C-f" "C-b" "C-n" "C-p" "C-g"))
+  (rime-inline-ascii-holder ?a)
+  (default-input-method "rime")
+  (rime-cursor "|")
+  (rime-show-candidate 'posframe)
+  (rime-title (char-to-string 12563)))
