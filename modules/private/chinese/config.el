@@ -86,16 +86,37 @@
         ("<tab>" . 'rime-inline-ascii))
   (:map rime-mode-map
         ("C-`" . 'rime-send-keybinding)
-        ("M-j" . 'rime-force-enable))
+        ("C-s-r" . 'rime-force-enable))
   :custom
   (rime-user-data-dir "~/.config/fcitx/rime/")
-  (rime-disable-predicates '(rime-predicate-prog-in-code-p
-                             rime-predicate-after-alphabet-char-p))
-  (rime-inline-predicates '(rime-predicate-space-after-cc-p
-                            rime-predicate-current-uppercase-letter-p))
+  (rime-disable-predicates '(helm--alive-p                 ; 让 Helm 不继承输入法的状态
+                             rime-predicate-evil-mode-p
+                             rime-predicate-prog-in-code-p ; 在 prog-mode 和 conf-mode 中除了注释和引号内字符串之外的区域
+                             rime-predicate-auto-english-p ; 在英文字符后面继续输入英文，空格切换中英文
+                             ))
   (rime-translate-keybindings '("C-f" "C-b" "C-n" "C-p" "C-g"))
-  (rime-inline-ascii-holder ?a)
   (default-input-method "rime")
+  (rime-title (char-to-string 12563))
   (rime-cursor "|")
   (rime-show-candidate 'posframe)
-  (rime-title (char-to-string 12563)))
+  (rime-posframe-properties
+    (list :background-color "#333333"
+          :foreground-color "#dcdccc"
+          :font "WenQuanYi Micro Hei Mono-14"
+          :internal-border-width 10))
+  :config
+  (defun +rime--posframe-display-content-a (args)
+    "给 `rime--posframe-display-content' 传入的字符串加一个全角空
+格，以解决 `posframe' 偶尔吃字的问题。"
+    (cl-destructuring-bind (content) args
+      (let ((newresult (if (string-blank-p content)
+                           content
+                         (concat content "　"))))
+        (list newresult))))
+
+  (if (fboundp 'rime--posframe-display-content)
+      (advice-add 'rime--posframe-display-content
+                  :filter-args
+                  #'+rime--posframe-display-content-a)
+    (error "Function `rime--posframe-display-content' is not available."))
+  )

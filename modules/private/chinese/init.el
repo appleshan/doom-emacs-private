@@ -28,5 +28,5 @@
   ad-do-it
   (if current-input-method (message "IME on!")))
 
-(global-set-key (kbd "C-s-\\") '+chinese/evil-toggle-input-method)
+(global-set-key (kbd "C-\\") '+chinese/evil-toggle-input-method)
 ;; }}
