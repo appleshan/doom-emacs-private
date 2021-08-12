@@ -12,7 +12,7 @@
 ;; @see http://www.modernemacs.com/post/pretty-magit/
 (after! magit
   (use-package! pretty-magit
-    :load-path "~/.doom.d/local/pretty-magit/"
+    :load-path "~/.config/doom/local/pretty-magit/"
     :config
     (pretty-magit "Feature" ? '(:foreground "slate gray" :height 1.0 :family "FontAwesome"))
     (pretty-magit "Add" ? '(:foreground "#375E97" :height 1.0 :family "FontAwesome"))

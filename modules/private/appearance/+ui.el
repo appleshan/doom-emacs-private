@@ -1,8 +1,7 @@
 ;;; +ui.el --- description -*- lexical-binding: t; -*-
 
 ;; Theme
-(when (featurep! :ui doom)
-  (setq doom-theme 'doom-dracula))
+(setq doom-theme 'doom-dracula)
 
 ;; Change cursor color depending on mode
 (setq evil-emacs-state-cursor `("red" hbar))     ; _
@@ -13,15 +12,15 @@
 (setq evil-operator-state-cursor `("red" hollow))
 (setq evil-motion-state-cursor `("orange" box))  ; █
 
-;; Start maximized
-(add-to-list 'default-frame-alist '(fullscreen . maximized))
+;; Prevents some cases of Emacs flickering
+(add-to-list 'default-frame-alist '(inhibit-double-buffering . t))
 
 ;; Fonts
-(setq
-      doom-font (font-spec :family "Hack" :size 16)
-      doom-variable-pitch-font (font-spec :family "Hack")
+(setq doom-font (font-spec :family "JetBrainsMono" :size 16 :weight 'light)
+      doom-variable-pitch-font (font-spec :family "Noto Serif" :size 13)
       doom-unicode-font (font-spec :family "Microsoft Yahei Mono")
-      doom-big-font (font-spec :family "Hack" :size 19))
+      doom-big-font (font-spec :family "Hack" :size 19)
+      ivy-posframe-font (font-spec :family "JetBrainsMono" :size 15))
 
 ;; Modeline
 (setq +doom-modeline-buffer-file-name-style 'relative-from-project)

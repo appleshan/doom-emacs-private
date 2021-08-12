@@ -1,7 +1,12 @@
-;; -*- no-byte-compile: t; -*-
-;;; .doom.d/packages.el
+;;; ~/.config/doom/packages.el
 
-;;; Examples:
-;; (package! some-package)
-;; (package! another-package :recipe (:host github :repo "username/repo"))
-;; (package! builtin-package :disable t)
+;; (package! doom-snippets
+;;   :recipe (:local-repo "~/projects/conf/doom-snippets"
+;;            :files ("*.el" "snippets")
+;;            :build (:not compile)))
+
+;; (package! doom-themer
+;;   :recipe (:local-repo "~/projects/plugins/emacs-doom-themer/"))
+;; (package! doom-themes
+;;   :recipe (:local-repo "~/projects/plugins/emacs-doom-themes/"
+;;            :files ("*.el" "themes/*.el" "extensions/*.el")))
