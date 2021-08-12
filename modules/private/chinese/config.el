@@ -79,6 +79,7 @@
     (dolist (i '(org-mode-hook prog-mode-hook text-mode-hook))
       (add-hook i 'enable-pangu-spacing-when-buffer-not-large))))
 
+;; @See https://manateelazycat.github.io/emacs/2020/03/22/emacs-rime.html
 (use-package! rime
   :commands (toggle-input-method)
   :bind
