@@ -129,6 +129,21 @@
 
   )
 
+;; 借助 EasyPG package 原生支持GnuPG加密. 提供基本的GnuPG功能.
+(after! epa-file
+  ;; 总是使用对称加密
+  (setq epa-file-encrypt-to nil)
+  ;; 只會在目前的 session 記住這個密碼
+  (setq epa-file-cache-passphrase-for-symmetric-encryption t)
+  ;; 不允许自动保存
+  (setq epa-file-inhibit-auto-save t)
+  (setq epa-file-select-keys 0)
+  ;; non-GUI password dialog. Test: (getenv "GPG_AGENT_INFO")
+  (setenv "GPG_AGENT_INFO" nil)
+
+  ;; Use org-mode for encrypted org file
+  (add-to-list 'auto-mode-alist '("\\.org.gpg\\'" . org-mode)))
+
 (use-package! org-super-agenda
   :config (org-super-agenda-mode))
 
