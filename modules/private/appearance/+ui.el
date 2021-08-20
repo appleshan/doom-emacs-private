@@ -16,11 +16,10 @@
 (add-to-list 'default-frame-alist '(inhibit-double-buffering . t))
 
 ;; Fonts
-(setq doom-font (font-spec :family "JetBrainsMono" :size 16 :weight 'light)
-      doom-variable-pitch-font (font-spec :family "Noto Serif" :size 13)
-      doom-unicode-font (font-spec :family "Microsoft Yahei Mono")
-      doom-big-font (font-spec :family "Hack" :size 19)
-      ivy-posframe-font (font-spec :family "JetBrainsMono" :size 15))
+(setq doom-font (font-spec :family "JetBrainsMono" :size 18 :weight 'light)
+      doom-variable-pitch-font (font-spec :family "JetBrainsMono" :size 14)
+      doom-unicode-font (font-spec :family "Source Han Sans")
+      doom-big-font (font-spec :family "JetBrainsMono" :size 20))
 
 ;; Modeline
 (setq +doom-modeline-buffer-file-name-style 'relative-from-project)
