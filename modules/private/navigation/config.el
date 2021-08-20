@@ -82,6 +82,17 @@
               ("M-g M-d" . dogears-list)
               ("M-g M-D" . dogears-sidebar)))
 
+(use-package! imenu-list
+  :commands imenu-list-smart-toggle
+  :config
+  (set-popup-rule! "^\\*Ilist"
+    :side 'left :size 50 :quit nil :select t :ttl 0))
+
+(after! imenu
+  (map!
+   :leader
+   :desc "imenu" "oi" #'imenu-list-toggle))
+
 (map!
   :when (featurep! :feature evil +everywhere)
   :after dired
