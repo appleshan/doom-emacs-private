@@ -1,6 +1,7 @@
 ;;; config.el -*- lexical-binding: t; -*-
 
-(after! wakatime-mode
+(use-package! wakatime-mode
+  :init
   (let* ((wakatime-cfg "~/.wakatime.cfg")
          (wakatime-bin-name "wakatime")
          (wakatime-bin (locate-file wakatime-bin-name exec-path)))
@@ -27,7 +28,7 @@
 ;; Keybindings
 ;;
 
-(map! :leader
-  (:desc "open" :prefix "o"
-    :desc "Wakatime dashboard"              :nv "W"  #'+service/wakatime-dashboard)
+(map!
+  :leader
+  :desc "Wakatime dashboard" "ow" #'+service/wakatime-dashboard
   )
