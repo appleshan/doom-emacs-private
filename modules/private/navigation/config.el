@@ -64,6 +64,14 @@
   (add-to-list 'projectile-globally-ignored-file-suffixes ".class")
   (add-to-list 'projectile-globally-ignored-file-suffixes ".pyc"))
 
+(after! ace-window
+  ;; Customizing ace-window leading char
+  ;; @See https://oremacs.com/2015/02/27/ace-window-leading-char/
+  (custom-set-faces
+   '(aw-leading-char-face
+     ((t :height 3.5 :foreground "deep sky blue" :inherit 'aw-leading-char-face))))
+  )
+
 (map!
   :when (featurep! :feature evil +everywhere)
   :after dired
