@@ -112,15 +112,7 @@
   ;; 设置agenda的数据来源
   ;; org-agenda-files中的元素还可以是目录，这时目录下的所有匹配
   ;; `org-agenda-file-regexp’的文件都自动加入 agenda .
-  (setq org-agenda-files
-    (list
-        (concat org-gtd-dir "inbox.org")
-        (concat org-gtd-dir "project.org")
-        (concat org-gtd-dir "task.org")
-        (concat org-gtd-dir "finished.org")
-        (concat org-gtd-dir "trash.org")
-        (concat org-gtd-dir "memorial-day.org")
-        ))
+  (setq org-agenda-files (list org-gtd-dir))
   )
 
 (after! org-faces
