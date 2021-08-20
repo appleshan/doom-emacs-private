@@ -72,6 +72,16 @@
      ((t :height 3.5 :foreground "deep sky blue" :inherit 'aw-leading-char-face))))
   )
 
+;; Never lose your place in Emacs again!
+(use-package! dogears
+  ;; These bindings are optional, of course:
+  :bind (:map global-map
+              ("M-g d" . dogears-go)
+              ("M-g M-b" . dogears-back)
+              ("M-g M-f" . dogears-forward)
+              ("M-g M-d" . dogears-list)
+              ("M-g M-D" . dogears-sidebar)))
+
 (map!
   :when (featurep! :feature evil +everywhere)
   :after dired
