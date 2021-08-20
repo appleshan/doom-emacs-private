@@ -8,6 +8,9 @@
   ;; 不显示headline之间的空白行
   (setq org-cycle-separator-lines 0)
 
+  ;; 比较喜欢使用 ⤵ 指待隐藏内容
+  (setq org-ellipsis "⤵")
+
   ;;{{ 仅仅显示斜体字就好
   ;; /org italic/ 看起来就好像是斜体字被正则表达式的分隔符所包围了一样. 隐藏这些标记很简单
   (setq org-hide-emphasis-markers t)
