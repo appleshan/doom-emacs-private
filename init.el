@@ -60,7 +60,7 @@
        ;;(emoji +unicode)
        ;;fill-column
        hl-todo
-       ;;hydra
+       hydra
        ;;indent-guides     ; highlighted indent columns
        ;;ligatures
        ;;minimap
@@ -75,7 +75,7 @@
        ;;tabs
        vc-gutter
        vi-tilde-fringe
-       ;;window-select
+       window-select
        workspaces
        zen
 
