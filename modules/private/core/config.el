@@ -29,7 +29,3 @@
 (add-hook 'minibuffer-setup-hook #'eos/minibuffer-setup-hook)
 (add-hook 'minibuffer-exit-hook #'eos/minibuffer-exit-hook)
 ;;}}
-
-(defun +core/show-current-buffer-major-mode ()
-  (interactive)
-  (describe-variable 'major-mode))

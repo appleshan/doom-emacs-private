@@ -22,9 +22,6 @@
     (pretty-magit "master" ? '(:box nil :height 1.0 :family "github-octicons") t)
     (pretty-magit "origin" ? '(:box nil :height 1.0 :family "github-octicons") t)))
 
-(after! magithub
-  (setq magithub-clone-default-directory "~/projects-private"))
-
 ;; A pretty git graph drawn with Emacs lisp.
 ;; M-x magit-pg-repo says bye-bye to the server
 (use-package! magit-pretty-graph)
