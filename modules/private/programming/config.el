@@ -29,6 +29,31 @@
 ;; M-x magit-pg-repo says bye-bye to the server
 (use-package! magit-pretty-graph)
 
+;; symbol-overlay 高亮同一个symbol,并对其编辑
+(use-package! symbol-overlay
+  :defer t
+  :diminish symbol-overlay-mode
+  :hook ((prog-mode html-mode yaml-mode conf-mode) . symbol-overlay-mode)
+  :custom-face
+  (symbol-overlay-default-face ((t (:inherit 'background-color :underline t))))
+  :bind ("C-$" . symbol-overlay-put)
+  :config
+  (setq symbol-overlay-map (make-sparse-keymap))
+  (defhydra +prog/symbol-overlay-hydra (:hint nil)
+    ("i" symbol-overlay-put                  "toggle at point" :column "highlight")
+    ("t" symbol-overlay-toggle-in-scope      "toggle scope   "                    )
+    ("u" symbol-overlay-remove-all           "unhighlight all"                    )
+    ("n" symbol-overlay-jump-next            "next           " :column "move     ")
+    ("p" symbol-overlay-jump-prev            "prev           "                    )
+    ("<" symbol-overlay-jump-first           "first          "                    )
+    (">" symbol-overlay-jump-last            "last           "                    )
+    ("f" symbol-overlay-switch-forward       "forward        " :column "others   ")
+    ("b" symbol-overlay-switch-backward      "backward       "                    )
+    ("y" symbol-overlay-save-symbol          "copy           " :column "action   ")
+    ("Y" symbol-overlay-rename               "rename         "                    )
+    ("w" symbol-overlay-query-replace        "query replace  "                    )
+    ("." symbol-overlay-jump-to-definition   "to definition  "                    )))
+
 (after! projectile
   (setq projectile-require-project-root t))
 
