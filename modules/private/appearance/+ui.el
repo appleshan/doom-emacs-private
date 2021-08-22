@@ -17,9 +17,32 @@
 
 ;; Fonts
 (setq doom-font (font-spec :family "JetBrainsMono" :size 18 :weight 'light)
-      doom-variable-pitch-font (font-spec :family "JetBrainsMono" :size 14)
-      doom-unicode-font (font-spec :family "Source Han Sans")
+      doom-variable-pitch-font (font-spec :family "JetBrainsMono" :size 18)
+      doom-unicode-font (font-spec :family "IPAmjMincho")
       doom-big-font (font-spec :family "JetBrainsMono" :size 20))
+
+;; {{ 字体设置的新方法
+;; @See https://manateelazycat.github.io/emacs/2020/04/02/org-font.html
+;; 利用更纱黑体这个字体来解决表格对齐的问题，因为更纱黑体字体通过融合现有字体
+;; 实现中文字符的宽度刚好是英文字符宽度的两倍，以此来解决表格对齐的问题。
+; (let ((emacs-font-size 14)
+;       (emacs-font-name "WenQuanYi Micro Hei Mono"))
+;   (set-frame-font (format "%s-%s" (eval emacs-font-name) (eval emacs-font-size)))
+;   (set-fontset-font (frame-parameter nil 'font) 'unicode (eval emacs-font-name)))
+
+(with-eval-after-load 'org
+  (defun org-buffer-face-mode-variable ()
+    (interactive)
+    (make-face 'width-font-face)
+    (set-face-attribute 'width-font-face nil :font "等距更纱黑体 SC 18")
+    (setq buffer-face-mode-face 'width-font-face)
+    (buffer-face-mode))
+
+  (add-hook 'org-mode-hook 'org-buffer-face-mode-variable))
+
+;; 上面配置的意思是，默认Emacs使用文泉驿字体，Org-Mode使用更纱黑体字体，
+;; 这样既可以解决Org-Mode表格对齐问题，又避免对Emacs其他模式产生影响。
+;; }}
 
 ;; Modeline
 (setq +doom-modeline-buffer-file-name-style 'relative-from-project)
