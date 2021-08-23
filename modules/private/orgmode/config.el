@@ -129,6 +129,12 @@
 
   )
 
+;; 修改 org 文件中各层级的 headline 前显示的标志
+(use-package! org-bullets
+  :config
+  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+  (setq org-bullets-bullet-list '("#")))
+
 ;; 借助 EasyPG package 原生支持GnuPG加密. 提供基本的GnuPG功能.
 (after! epa-file
   ;; 总是使用对称加密

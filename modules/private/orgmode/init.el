@@ -5,10 +5,6 @@
       org-gtd-dir (expand-file-name "~/projects-private/org-gtd/"))
 
 ;; lang/org
-(setq ;; The standard unicode characters are usually misaligned depending on the
-      ;; font. This bugs me. Personally, markdown #-marks for headlines are more
-      ;; elegant.
-      org-bullets-bullet-list '("#"))
 
 ;; {{ Move single cells using C-M-up C-M-down C-M-left C-M-right
 (add-hook 'org-mode-hook
