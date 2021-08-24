@@ -15,3 +15,12 @@
   ("Y" symbol-overlay-rename               "rename         "                    )
   ("w" symbol-overlay-query-replace        "query replace  "                    )
   ("." symbol-overlay-jump-to-definition   "to definition  "                    ))
+
+;;;###autoload
+(defun find-symbol-at-point ()
+  "Find the symbol at point, i.e. go to definition."
+  (interactive)
+  (let ((sym (symbol-at-point)))
+    (if (boundp sym)
+        (find-variable sym)
+      (find-function sym))))
