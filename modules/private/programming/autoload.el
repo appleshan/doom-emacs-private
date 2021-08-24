@@ -1,7 +1,7 @@
 ;;; autoload.el -*- lexical-binding: t; -*-
 
 ;;;###autoload
-(defhydra +prog/symbol-overlay-hydra (:hint nil)
+(defhydra +hydra/symbol-overlay (:hint nil)
   ("i" symbol-overlay-put                  "toggle at point" :column "highlight")
   ("t" symbol-overlay-toggle-in-scope      "toggle scope   "                    )
   ("u" symbol-overlay-remove-all           "unhighlight all"                    )
