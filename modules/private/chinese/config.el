@@ -122,3 +122,6 @@
                   #'+rime--posframe-display-content-a)
     (error "Function `rime--posframe-display-content' is not available."))
   )
+
+(use-package! pinyinlib)
+(use-package! pinyin-search)
