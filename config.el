@@ -48,4 +48,7 @@
       transient-values '((magit-rebase "--autosquash" "--autostash")
                          (magit-pull "--rebase" "--autostash")))
 
+;; Unbindings
+(global-set-key (kbd "C-SPC") nil)
+
 ;;; config.el ends here
