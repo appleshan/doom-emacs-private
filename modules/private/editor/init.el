@@ -46,8 +46,8 @@
     (line-move-to-column tmp)
     (forward-line -1)))
 
-(global-set-key [(control down)] '+editor|hold-line-scroll-up)
-(global-set-key [(control up)] '+editor|hold-line-scroll-down)
+(global-set-key [(control shift down)] '+editor|hold-line-scroll-up)
+(global-set-key [(control shift up)]   '+editor|hold-line-scroll-down)
 ;; }}
 
 ;; {{ Move Current Line Up or Down
@@ -67,8 +67,8 @@
   (forward-line -1)
   (indent-according-to-mode))
 
-(global-set-key (kbd "M-<up>") '+editor|move-line-up)
-(global-set-key (kbd "M-<down>") '+editor|move-line-down)
+(global-set-key [(meta shift up)]   '+editor|move-line-up)
+(global-set-key [(meta shift down)] '+editor|move-line-down)
 ;; }}
 
 ;; 逗号后面自动加空格
