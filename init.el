@@ -46,9 +46,13 @@
       ))
 
 (doom! :completion
-       (company +childframe)
-       ;; ivy
-       (helm +childframe +fuzzy)
+       (company
+        +childframe)     ; a nicer company UI. Emacs +26 only!
+       ;(helm +childframe +fuzzy)
+       (ivy
+        +childframe
+        +icons
+        +prescient)
        ;;ido
        ;;vertico
 
@@ -58,14 +62,13 @@
        doom-dashboard
        ;;doom-quit
        ;;(emoji +unicode)
-       ;;fill-column
        hl-todo
        hydra
        ;;indent-guides     ; highlighted indent columns
        ;;ligatures
        ;;minimap
-       (modeline +light)
-       ;;nav-flash
+       modeline
+       nav-flash
        ;;neotree
        ophints
        (popup +defaults)
@@ -77,7 +80,7 @@
        vi-tilde-fringe
        window-select
        workspaces
-       zen
+       ;;zen
 
        :input
        ;;chinese
@@ -89,19 +92,19 @@
        file-templates
        fold              ; (nigh) universal code folding
        ;;objed
-       format            ; automated prettiness
+       (format +onsave)  ; automated prettiness
        ;;lispy             ; vim for lisp, for people who dont like vim
        multiple-cursors  ; editing in many places at once
        ;;parinfer          ; turn lisp into python, sort of
        rotate-text       ; cycle region at point between text candidates
        snippets
-       ;;word-wrap
+       word-wrap
 
        :emacs
-       dired             ; making dired pretty [functional]
+       (dired  +icons)     ; making dired pretty [functional]
        electric          ; smarter, keyword-based electric-indent
-       ibuffer           ; interactive buffer management
-       ;;undo
+       (ibuffer +icons)    ; interactive buffer management
+       (undo +icons)
        vc
 
        :term
@@ -154,7 +157,7 @@
        ;;(csharp +unity +lsp)
        ;;common-lisp
        ;;coq
-       ;;data
+       data
        ;;(dart +lsp)
        ;;erlang
        ;;elixir
@@ -168,6 +171,7 @@
        ;;hy
        ;;(java +meghanada)
        ;;(javascript +lsp)
+       json
        ;;julia
        ;;latex
        ;;ledger
@@ -176,7 +180,7 @@
        ;;nim
        ;;nix
        ;;ocaml
-       (org +dragndrop +journal +roam +present)
+       org
        ;;perl
        ;;php
        ;;plantuml
@@ -213,18 +217,17 @@
 
        ;;------------- Load Personal Modules --------------
        :private
-      ;core
-      ;appearance
-      ;navigation
-      ;notify
-      ;chinese
-      ;editor
-      ;orgmode
-      ;programming
+       core
+       appearance
+       navigation
+       notify
+       chinese
+       editor
+       orgmode
+       programming
       ;lang-python
-      ;lang-lsp
       ;lsp-python
-      ;service
+       service
        )
 
 ;(setq custom-file (expand-file-name "local/custom.el" doom-emacs-dir))
