@@ -46,8 +46,14 @@
         company-search-regexp-function #'company-search-flex-regexp)
   )
 
+;; 英文自动补全和翻译，激活命令toggle-company-english-helper
 (use-package! company-english-helper
-  :init (require 'company-english-helper)
+  :defer t
+  :commands (toggle-company-english-helper)
+  :init
+  (map! :leader
+        :prefix ("y" . "Translate")
+        "M" #'toggle-company-english-helper)
   :config
   (setq company-english-helper-fuzz-search-p t))
 
