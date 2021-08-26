@@ -101,7 +101,7 @@
   (default-input-method "rime")
   ;; @See https://github.com/DogLooksGood/emacs-rime/issues/133
   (rime-user-data-dir "~/.local/share/fcitx5/rime")
-  (rime-disable-predicates '(helm--alive-p                 ; 让 Helm 不继承输入法的状态
+  (rime-disable-predicates '(;helm--alive-p                 ; 让 Helm 不继承输入法的状态
                              rime-predicate-evil-mode-p
                              rime-predicate-prog-in-code-p ; 在 prog-mode 和 conf-mode 中除了注释和引号内字符串之外的区域
                              rime-predicate-auto-english-p ; 在英文字符后面继续输入英文，空格切换中英文
