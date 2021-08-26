@@ -53,7 +53,7 @@
   :init
   (map! :leader
         :prefix ("y" . "Translate")
-        "M" #'toggle-company-english-helper)
+        :desc "Toggle company english" "M" #'toggle-company-english-helper)
   :config
   (setq company-english-helper-fuzz-search-p t))
 
