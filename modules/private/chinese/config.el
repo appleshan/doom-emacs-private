@@ -90,7 +90,6 @@
 
 ;; @See https://manateelazycat.github.io/emacs/2020/03/22/emacs-rime.html
 (use-package! rime
-  :commands (toggle-input-method)
   :bind
   (:map rime-active-mode-map
         ("<tab>" . 'rime-inline-ascii))
