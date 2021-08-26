@@ -7,10 +7,6 @@
 ;; Discover key bindings and their meaning for the current Emacs major mode
 (use-package! discover-my-major)
 
-(use-package! on-screen
-  :init (require 'on-screen)
-  :config (on-screen-global-mode +1))
-
 (use-package! awesome-tab
   :config
   (setq awesome-tab-cycle-scope 'tabs ; Navigate through visible tabs only.
