@@ -9,14 +9,9 @@
 
 ;; The all-seeing eye of Sauron
 (use-package! sauron
-  ;:commands (sauron-toggle-hide-show)
-  ;:bind ("M-o" . sauron-toggle-hide-show)
   :init
   (progn
-    (when (eq system-type 'gnu/linux)
-      ;; Remove mu4e if on linux
-      (require 'sauron)
-      (setq sauron-modules '(sauron-org sauron-notifications)))
+    (setq sauron-modules '(sauron-org sauron-notifications))
 
     (setq sauron-max-line-length 120
           sauron-watch-patterns '("dakrone" "thnetos" "okenezak")
