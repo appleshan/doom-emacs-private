@@ -131,6 +131,7 @@
 
 ;; 修改 org 文件中各层级的 headline 前显示的标志
 (use-package! org-bullets
+  :defer 1
   :config
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
   (setq org-bullets-bullet-list '("#")))
@@ -151,9 +152,11 @@
   (add-to-list 'auto-mode-alist '("\\.org.gpg\\'" . org-mode)))
 
 (use-package! org-super-agenda
+  :defer t
   :config (org-super-agenda-mode))
 
 (use-package! secretaria
+  :defer t
   :after (alert f s)
   :config
   ;; use this for getting a reminder every 30 minutes of those tasks scheduled

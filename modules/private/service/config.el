@@ -1,6 +1,7 @@
 ;;; config.el -*- lexical-binding: t; -*-
 
 (use-package! wakatime-mode
+  :defer t
   :init
   (let* ((wakatime-cfg "~/.wakatime.cfg")
          (wakatime-bin-name "wakatime")

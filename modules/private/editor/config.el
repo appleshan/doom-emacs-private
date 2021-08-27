@@ -28,6 +28,7 @@
 
 ;; 这个包会自动检测是否有权限编辑，没有权限就自动调用sudo.
 (use-package! auto-sudoedit
+  :defer t
   :config
   ;; Just hook on `find-file-hook', don't hook `dired-mode-hook', it's unnecessary.
   (add-hook 'find-file-hook (lambda () (auto-sudoedit-mode 1))))

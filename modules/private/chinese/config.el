@@ -5,6 +5,7 @@
 
 ;; Chinese calendar
 (use-package! cal-china-x
+  :defer 1
   :config
   (progn
     ;; `S' can show the time of sunrise and sunset on Calendar
@@ -90,6 +91,7 @@
 
 ;; @See https://manateelazycat.github.io/emacs/2020/03/22/emacs-rime.html
 (use-package! rime
+  :defer t
   :bind
   (:map rime-active-mode-map
         ("<tab>" . 'rime-inline-ascii))
@@ -131,5 +133,7 @@
     (error "Function `rime--posframe-display-content' is not available."))
   )
 
-(use-package! pinyinlib)
-(use-package! pinyin-search)
+(use-package! pinyinlib
+  :defer t)
+(use-package! pinyin-search
+  :defer t)

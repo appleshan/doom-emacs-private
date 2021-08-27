@@ -5,7 +5,8 @@
 (load! "+popup")
 
 ;; Discover key bindings and their meaning for the current Emacs major mode
-(use-package! discover-my-major)
+(use-package! discover-my-major
+  :defer t)
 
 (use-package! awesome-tab
   :config

@@ -50,9 +50,13 @@
   (setq dired-k-human-readable t))
 
 ;; dired renaming like GUI file manager
-(use-package! dired-efap)
+(use-package! dired-efap
+  :after-call dired
+  :defer 2)
 
 (use-package! dired-single
+  :after-call dired
+  :defer 1
   :config
   (defun +dired|single-magic-buffer ()
     (interactive)
@@ -93,22 +97,18 @@
               ("M-g M-D" . dogears-sidebar)))
 
 (use-package! imenu-list
+  :defer t
   :config
   (set-popup-rule! "^\\*Ilist"
     :side 'left :size 50 :quit nil :select t :ttl 0))
 
-(after! imenu
+(after! imenu-list
   (map!
    :leader
    :desc "imenu" "oi" #'imenu-list-toggle))
 
 (map!
-  :when (featurep! :feature evil +everywhere)
   :after dired
-  :n [(f5)] #'dired-single-magic-buffer
-  :n [(meta f5)] #'dired-single-toggle-buffer-name
-  :n [(shift f5)] #'+dired|show-current-dir
-  :n [(control f5)] #'+dired|single-magic-buffer
   :map dired-mode-map
   :n [return] #'dired-single-buffer
   :n [mouse-1] #'dired-single-buffer-mouse

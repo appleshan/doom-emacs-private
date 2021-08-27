@@ -12,6 +12,7 @@
 ;; @see http://www.modernemacs.com/post/pretty-magit/
 (after! magit
   (use-package! pretty-magit
+    :defer 1
     :load-path "~/.config/doom/local/pretty-magit/"
     :config
     (pretty-magit "Feature" ? '(:foreground "slate gray" :height 1.0 :family "FontAwesome"))
@@ -24,7 +25,8 @@
 
 ;; A pretty git graph drawn with Emacs lisp.
 ;; M-x magit-pg-repo says bye-bye to the server
-(use-package! magit-pretty-graph)
+(use-package! magit-pretty-graph
+  :defer 1)
 
 ;; symbol-overlay 高亮同一个symbol,并对其编辑
 (use-package! symbol-overlay
