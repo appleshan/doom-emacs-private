@@ -1,31 +1,5 @@
 ;;; config.el -*- lexical-binding: t; -*-
 
-(use-package! aggressive-indent
-  :config
-  (dolist (hook (list
-                 'emacs-lisp-mode-hook
-                 'lisp-interaction-mode-hook
-                 'lisp-mode-hook
-                 'java-mode-hook
-                 'sh-mode-hook
-                 'js2-mode-hook
-                 'js-mode-hook
-                 'html-mode-hook
-                 'css-mode-hook
-                 'go-mode-hook
-                 'slime-repl-mode-hook
-                 'cmake-mode-hook
-                 'web-mode-hook
-                 ))
-    (add-hook hook (lambda () (aggressive-indent-mode 1))))
-
-  ;; Disable aggressive indent in some mode.
-  (dolist (hook (list
-                 'python-mode-hook
-                 ))
-    (add-hook hook (lambda () (aggressive-indent-mode -1))))
-  )
-
 ;; 这个包会自动检测是否有权限编辑，没有权限就自动调用sudo.
 (use-package! auto-sudoedit
   :defer t

@@ -1,7 +1,5 @@
 ;;; packages.el -*- lexical-binding: t; -*-
 
-(package! aggressive-indent)
-
 (package! auto-sudoedit)
 
 (package! company-english-helper
