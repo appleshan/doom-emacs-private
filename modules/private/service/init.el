@@ -11,8 +11,8 @@
 (defun set-proxy ()
   "Set http/https proxy."
   (interactive)
-  (setq url-proxy-services `(("http" . "127.0.0.1:18080")
-                             ("https" . "127.0.0.1:18080")))
+  (setq url-proxy-services `(("http" . "127.0.0.1:8889")
+                             ("https" . "127.0.0.1:8889")))
   (show-proxy))
 
 (defun unset-proxy ()
