@@ -83,6 +83,7 @@
 
 ;; Never lose your place in Emacs again!
 (use-package! dogears
+  :load-path "~/.config/doom/local/dogears.el/"
   ;; These bindings are optional, of course:
   :bind (:map global-map
               ("M-g d" . dogears-go)
