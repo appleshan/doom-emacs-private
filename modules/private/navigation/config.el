@@ -92,7 +92,6 @@
               ("M-g M-D" . dogears-sidebar)))
 
 (use-package! imenu-list
-  :commands imenu-list-smart-toggle
   :config
   (set-popup-rule! "^\\*Ilist"
     :side 'left :size 50 :quit nil :select t :ttl 0))
