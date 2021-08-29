@@ -54,6 +54,28 @@
 (use-package! magit-pretty-graph
   :defer 1)
 
+;; Package 'magit-delta' integrates Delta (https://github.com/dandavison/delta)
+;; with Magit, so that diffs in Magit are displayed with color highlighting
+;; provided by Delta.
+(use-package! magit-delta
+  :if (locate-file "delta" exec-path exec-suffixes 1)
+  :after magit
+  :defer 1
+  :config
+  (when (< (kurecolor-hex-get-brightness (face-attribute 'default :background))
+           0.5)
+    (setq magit-delta-delta-args
+          `("--plus-color" "#016000"
+            "--plus-emph-color" "#02a000"
+            "--minus-color" "#840001"
+            "--minus-emph-color" "#b60004"
+            "--max-line-distance" "0.6"
+            "--24-bit-color" ,(if xterm-color--support-truecolor
+                                  "always"
+                                "never")
+            "--color-only")))
+  (magit-delta-mode +1))
+
 ;; symbol-overlay 高亮同一个symbol,并对其编辑
 (use-package! symbol-overlay
   :defer t
