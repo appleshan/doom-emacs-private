@@ -63,8 +63,7 @@
   :defer 1
   :config
   (setq magit-delta-delta-args
-        `("--line-numbers"
-          "--plus-color" "#016000"
+        `("--plus-color" "#016000"
           "--plus-emph-color" "#02a000"
           "--minus-color" "#840001"
           "--minus-emph-color" "#b60004"
