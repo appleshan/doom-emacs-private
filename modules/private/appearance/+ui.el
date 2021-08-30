@@ -1,7 +1,7 @@
 ;;; +ui.el --- description -*- lexical-binding: t; -*-
 
 ;; Theme
-(setq doom-theme 'doom-dracula)
+(setq doom-theme 'doom-city-lights)
 
 ;; Change cursor color depending on mode
 (setq evil-emacs-state-cursor `("red" hbar))     ; _
