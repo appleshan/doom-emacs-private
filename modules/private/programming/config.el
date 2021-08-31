@@ -176,3 +176,26 @@
    ("C-c _"  . wrap-with-underscores)
    ("C-c `"  . wrap-with-back-quotes))
   )
+
+;;; color-rg: Search and refactoring tool based on ripgrep.
+(use-package! color-rg
+  :commands (color-rg-search-input-in-project
+             color-rg-search-symbol-in-project
+             color-rg-search-input-in-current-file
+             color-rg-search-symbol-in-current-file)
+  :config
+  ;; https://emacs.stackexchange.com/a/10588/22102
+  (evil-make-overriding-map color-rg-mode-map 'normal)
+  ;; force update evil keymaps after git-timemachine-mode loaded
+  (add-hook 'color-rg-mode-hook #'evil-normalize-keymaps)
+
+  (setq color-rg-kill-temp-buffer-p nil)
+  (remove-hook 'compilation-filter-hook
+               #'doom-apply-ansi-color-to-compilation-buffer-h)
+
+  (custom-set-faces!
+  `(color-rg-font-lock-match :foreground ,(doom-color 'red))
+  `(color-rg-font-lock-function-location :foreground ,(doom-color 'magenta))
+  `(color-rg-font-lock-header-line-text :foreground ,(doom-color 'dark-cyan))
+  `(color-rg-font-lock-header-line-keyword :foreground ,(doom-color 'magenta))
+  `(color-rg-font-lock-header-line-edit-mode :foreground ,(doom-color 'magenta))))
