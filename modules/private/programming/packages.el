@@ -3,11 +3,11 @@
 (package! aggressive-indent)
 
 (package! magit-pretty-graph
-  :recipe (:host github :repo "georgek/magit-pretty-graph" :files (:defaults "*")))
+  :recipe (:host github :repo "georgek/magit-pretty-graph"))
 
 (package! magit-delta)
 
 (package! symbol-overlay)
 
 (package! color-rg
-  :recipe (:host github :repo "manateelazycat/color-rg" :files (:defaults "*")))
+  :recipe (:host github :repo "manateelazycat/color-rg"))
