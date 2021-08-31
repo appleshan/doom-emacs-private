@@ -21,14 +21,14 @@
         company-search-regexp-function #'company-search-flex-regexp)
   )
 
-;; 英文自动补全和翻译，激活命令toggle-company-english-helper
+;; 英文自动补全和翻译，激活命令 toggle-company-english-helper
 (use-package! company-english-helper
   :defer t
   :commands (toggle-company-english-helper)
   :init
   (map! :leader
         :prefix ("y" . "Translate")
-        :desc "Toggle company english" "M" #'toggle-company-english-helper)
+        :desc "Toggle company english" "t" #'toggle-company-english-helper)
   :config
   (setq company-english-helper-fuzz-search-p t))
 
