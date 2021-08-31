@@ -75,6 +75,7 @@
 (global-set-key (kbd ",") #'(lambda () (interactive) (insert ", ")))
 
 ;; Display next page at the other window
+;; @See https://github.com/condy0919/emacs-newbie/blob/master/introduction-to-builtin-modes.md#follow-mode
 (global-set-key (kbd "C-c M-f") 'follow-mode)
 
 (defun +editor|open-readme-in-git-root-directory ()
