@@ -132,10 +132,10 @@
    ("C-M-a" . sp-beginning-of-sexp)
    ("C-M-e" . sp-end-of-sexp)
 
-   ("C-<down>" . sp-down-sexp)
-   ("C-<up>"   . sp-up-sexp)
-   ("M-<down>" . sp-backward-down-sexp)
-   ("M-<up>"   . sp-backward-up-sexp)
+   ("C-c C-<down>" . sp-down-sexp)
+   ("C-c C-<up>"   . sp-up-sexp)
+   ("C-c M-<down>" . sp-backward-down-sexp)
+   ("C-c M-<up>"   . sp-backward-up-sexp)
 
    ("C-M-f" . sp-forward-sexp)
    ("C-M-b" . sp-backward-sexp)
