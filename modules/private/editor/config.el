@@ -32,6 +32,17 @@
   :config
   (setq company-english-helper-fuzz-search-p t))
 
+;; 输入 insert-translated-name-insert 激活命令，可以输入中文后按空格翻译成英文插入当前位置。
+(use-package! insert-translated-name
+  :commands (insert-translated-name-insert)
+  :init
+  (map! :leader
+        :prefix ("y" . "Translate")
+        :desc "Insert translated name" "i" #'insert-translated-name-insert)
+  :config
+  (setq insert-translated-name-default-style 'origin)
+  (setq insert-translated-name-translate-engine "youdao"))
+
 (use-package! visual-regexp
   ; :commands (vr/replace vr/query-replace) ; See the bind of init-visual-regexp-steroids.
   :defer t)
