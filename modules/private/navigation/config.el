@@ -100,7 +100,7 @@
   :defer t
   :config
   (set-popup-rule! "^\\*Ilist"
-    :side 'left :size 50 :quit nil :select t :ttl 0))
+    :side 'right :size 50 :quit nil :select t :ttl 0))
 
 (after! imenu-list
   (map!
