@@ -98,14 +98,14 @@
 
 (use-package! imenu-list
   :defer t
+  :init
+  (map! :leader
+        :desc "imenu" "oi" #'imenu-list-toggle)
   :config
-  (set-popup-rule! "^\\*Ilist"
-    :side 'right :size 50 :quit nil :select t :ttl 0))
-
-(after! imenu-list
-  (map!
-   :leader
-   :desc "imenu" "oi" #'imenu-list-toggle))
+  (setq imenu-list-auto-resize t)
+  (setq imenu-list-focus-after-activation t)
+  (setq imenu-list-after-jump-hook nil)
+  (add-hook 'menu-list-after-jump-hook #'recenter-top-bottom))
 
 (map!
   :after dired
