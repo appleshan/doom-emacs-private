@@ -74,6 +74,9 @@
 ;; 逗号后面自动加空格
 (global-set-key (kbd ",") #'(lambda () (interactive) (insert ", ")))
 
+;; Display next page at the other window
+(global-set-key (kbd "C-c M-f") 'follow-mode)
+
 (defun +editor|open-readme-in-git-root-directory ()
   (interactive)
   (let (filename
