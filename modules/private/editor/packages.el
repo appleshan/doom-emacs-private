@@ -3,7 +3,7 @@
 (package! auto-sudoedit)
 
 (package! company-english-helper
-  :recipe (:host github :repo "manateelazycat/company-english-helper" :files (:defaults "*")))
+  :recipe (:host github :repo "manateelazycat/company-english-helper"))
 
 (package! insert-translated-name
   :recipe (:host github :repo "manateelazycat/insert-translated-name"))
