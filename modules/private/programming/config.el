@@ -199,3 +199,17 @@
   `(color-rg-font-lock-header-line-text :foreground ,(doom-color 'dark-cyan))
   `(color-rg-font-lock-header-line-keyword :foreground ,(doom-color 'magenta))
   `(color-rg-font-lock-header-line-edit-mode :foreground ,(doom-color 'magenta))))
+
+;; hideshow 扩展: 显示被隐藏的代码行数
+;; @See https://github.com/condy0919/emacs-newbie/blob/master/introduction-to-builtin-modes.md#hideshow
+(after! hideshow
+  ;; 这里额外启用了 :box t 属性使得提示更加明显
+  (defconst hideshow-folded-face '((t (:inherit 'font-lock-comment-face :box t))))
+
+  (defun hideshow-folded-overlay-fn (ov)
+      (when (eq 'code (overlay-get ov 'hs))
+        (let* ((nlines (count-lines (overlay-start ov) (overlay-end ov)))
+               (info (format " ... #%d " nlines)))
+          (overlay-put ov 'display (propertize info 'face hideshow-folded-face)))))
+
+  (setq hs-set-up-overlay 'hideshow-folded-overlay-fn))
