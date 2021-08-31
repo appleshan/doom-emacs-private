@@ -100,42 +100,59 @@
   :defer t
   :bind
   (:map rime-active-mode-map
-        ("<tab>" . 'rime-inline-ascii))
+    ("<tab>" . 'rime-inline-ascii))
   (:map rime-mode-map
-        ("C-`" . 'rime-send-keybinding)
-        ("C-s-r" . 'rime-force-enable))
+    ("C-`" . 'rime-send-keybinding)
+    ("C-s-r" . 'rime-force-enable))
   :custom
   (default-input-method "rime")
   ;; @See https://github.com/DogLooksGood/emacs-rime/issues/133
-  (rime-user-data-dir "~/.local/share/fcitx5/rime")
-  (rime-disable-predicates '(;helm--alive-p                 ; 让 Helm 不继承输入法的状态
-                             rime-predicate-evil-mode-p
-                             rime-predicate-prog-in-code-p ; 在 prog-mode 和 conf-mode 中除了注释和引号内字符串之外的区域
-                             rime-predicate-auto-english-p ; 在英文字符后面继续输入英文，空格切换中英文
-                             ))
+  (rime-user-data-dir "~/.local/share/fcitx5/rime") ; 用户 RIME 配置文件所在地
+  ;; 特定的场景下需要自动使用英文，若断言有一个非真，则自动进入英文模式
+  (rime-disable-predicates
+    '(;; rime-predicate-after-alphabet-char-p        ;在英文字符串之后（必须为以字母开头的英文字符串）
+      ;; rime-predicate-after-ascii-char-p           ;任意英文字符后
+      ;; rime-predicate-auto-english-p               ;在英文字符后面继续输入英文，空格切换中英文
+      ;; rime-predicate-prog-in-code-p               ;在 prog-mode 和 conf-mode 中除了注释和引号内字符串之外的区域
+      ;; rime-predicate-in-code-string-p             ;在代码的字符串中，不含注释的字符串。
+      rime-predicate-evil-mode-p                  ;在 evil-mode 的非编辑状态下
+      rime-predicate-ace-window-p                 ;激活 ace-window-mode
+      rime-predicate-hydra-p                      ;如果激活了一个 hydra keymap
+      ;; rime-predicate-current-input-punctuation-p  ;当要输入的是符号时
+      rime-predicate-punctuation-after-space-cc-p ;当要在中文字符且有空格之后输入符号时
+      rime-predicate-punctuation-after-ascii-p    ;当要在任意英文字符之后输入符号时
+      rime-predicate-punctuation-line-begin-p     ;在行首要输入符号时
+      ;; rime-predicate-space-after-ascii-p          ;在任意英文字符且有空格之后
+      rime-predicate-space-after-cc-p             ;在中文字符且有空格之后
+      rime-predicate-current-uppercase-letter-p   ;将要输入的为大写字母时
+      ;; rime-predicate-tex-math-or-command-p        ;在 (La)TeX 数学环境中或者输入 (La)TeX 命令时
+      ))
   (rime-translate-keybindings '("C-f" "C-b" "C-n" "C-p" "C-g"))
   (rime-title (char-to-string 12563))
   (rime-cursor "|")
   (rime-show-candidate 'posframe)
   (rime-posframe-properties
     (list :background-color "#333333"
-          :foreground-color "#dcdccc"
-          :font "WenQuanYi Micro Hei Mono-14"
-          :internal-border-width 10))
+      :foreground-color "#dcdccc"
+      :font "WenQuanYi Micro Hei Mono-14"
+      :internal-border-width 10))
+  :custom-face
+  (rime-code-face ((t (:foreground "#ee6363"))))          ;编码的颜色
+  (rime-candidate-num-face ((t (:foreground "#ee6363")))) ;候选序号颜色
   :config
   (defun +rime--posframe-display-content-a (args)
     "给 `rime--posframe-display-content' 传入的字符串加一个全角空
 格，以解决 `posframe' 偶尔吃字的问题。"
     (cl-destructuring-bind (content) args
       (let ((newresult (if (string-blank-p content)
-                           content
+                         content
                          (concat content "　"))))
         (list newresult))))
 
   (if (fboundp 'rime--posframe-display-content)
-      (advice-add 'rime--posframe-display-content
-                  :filter-args
-                  #'+rime--posframe-display-content-a)
+    (advice-add 'rime--posframe-display-content
+      :filter-args
+      #'+rime--posframe-display-content-a)
     (error "Function `rime--posframe-display-content' is not available."))
   )
 
