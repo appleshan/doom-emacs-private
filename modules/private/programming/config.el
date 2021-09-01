@@ -146,10 +146,10 @@
    ("C-S-f" . sp-forward-symbol)
    ("C-S-b" . sp-backward-symbol)
 
-   ("C-<right>" . sp-forward-slurp-sexp)
-   ("C-<left>"  . sp-backward-slurp-sexp)
-   ("M-<right>" . sp-forward-barf-sexp)
-   ("M-<left>"  . sp-backward-barf-sexp)
+   ("C-c C-<right>" . sp-forward-slurp-sexp)
+   ("C-c C-<left>"  . sp-backward-slurp-sexp)
+   ("C-c M-<right>" . sp-forward-barf-sexp)
+   ("C-c M-<left>"  . sp-backward-barf-sexp)
 
    ("C-M-t" . sp-transpose-sexp)
    ("C-M-k" . sp-kill-sexp)
