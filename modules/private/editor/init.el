@@ -93,3 +93,29 @@
 ;; Neat!
 (global-set-key [remap goto-line] 'goto-line-with-feedback)
 ;; }}
+
+;; {{ For some reason, renaming the current buffer file is a multi-step process in Emacs.
+
+(defun rename-current-buffer-file ()
+  "Renames current buffer and file it is visiting."
+  (interactive)
+  (let ((name (buffer-name))
+        (filename (buffer-file-name)))
+    (if (not (and filename (file-exists-p filename)))
+        (error "Buffer '%s' is not visiting a file!" name)
+      (let ((new-name (read-file-name "New name: " filename)))
+        (if (get-buffer new-name)
+            (error "A buffer named '%s' already exists!" new-name)
+          (rename-file filename new-name 1)
+          (rename-buffer new-name)
+          (set-visited-file-name new-name)
+          (set-buffer-modified-p nil)
+          (message "File '%s' successfully renamed to '%s'"
+                   name (file-name-nondirectory new-name)))))))
+
+(global-set-key (kbd "C-x C-r") 'rename-current-buffer-file)
+
+;; This defun fixes that. And unlike some other alternatives to perform
+;; this common task, you don't have to type the name out from scratch
+;; - but get the current name to modify. Like it should be.
+;; }}
