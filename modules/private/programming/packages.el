@@ -2,10 +2,10 @@
 
 (package! aggressive-indent)
 
+(package! magit-delta)
+
 (package! magit-pretty-graph
   :recipe (:host github :repo "georgek/magit-pretty-graph"))
-
-(package! magit-delta)
 
 (package! symbol-overlay)
 
