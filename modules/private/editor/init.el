@@ -120,7 +120,7 @@
 ;; - but get the current name to modify. Like it should be.
 ;; }}
 
-
+;; {{
 (defun delete-current-buffer-file ()
   "Removes file connected to current buffer and kills buffer."
   (interactive)
@@ -136,3 +136,4 @@
 
 (global-unset-key (kbd "C-x C-k"))
 (global-set-key (kbd "C-x C-k") 'delete-current-buffer-file)
+;; }}
