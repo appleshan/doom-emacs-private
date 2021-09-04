@@ -76,3 +76,20 @@
         (switch-to-buffer (find-file-noselect filename nil nil))
       (message "NO README.org or README.md found!"))
     ))
+
+;; {{ This snippet shows line numbers temporarily just
+;; when you're going to a line number with goto-line.
+(defun goto-line-with-feedback ()
+  "Show line numbers temporarily, while prompting for the line number input"
+  (interactive)
+  (unwind-protect
+      (progn
+        (linum-mode 1)
+        (goto-line (read-number "Goto line: ")))
+    (linum-mode -1)))
+
+;; Notice the nice remap-trick in the key binding.
+;; It will remap all key bindings from goto-line to goto-line-with-feedback.
+;; Neat!
+(global-set-key [remap goto-line] 'goto-line-with-feedback)
+;; }}
