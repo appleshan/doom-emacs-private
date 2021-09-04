@@ -37,6 +37,16 @@
 ;; pretty-magit
 ;; @see http://www.modernemacs.com/post/pretty-magit/
 (after! magit
+  ;; {{ C-c C-a to amend without any prompt
+  (defun magit-just-amend ()
+    (interactive)
+    (save-window-excursion
+      (shell-command "git --no-pager commit --amend --reuse-message=HEAD")
+      (magit-refresh)))
+
+  (define-key magit-status-mode-map (kbd "C-c C-a") 'magit-just-amend)
+  ;; }}
+
   (use-package! pretty-magit
     :defer 1
     :load-path "~/.config/doom/local/pretty-magit/"
