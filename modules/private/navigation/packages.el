@@ -2,6 +2,7 @@
 
 (package! dired-efap)
 (package! dired-single)
+(package! all-the-icons-dired)
 
 (package! projectile)
 
