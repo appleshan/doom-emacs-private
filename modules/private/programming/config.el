@@ -37,6 +37,29 @@
 ;; pretty-magit
 ;; @see http://www.modernemacs.com/post/pretty-magit/
 (after! magit
+  ;; {{ Actual changes lost in a sea of whitespace diffs?
+  ;; This adds W to toggle ignoring whitespace in magit.
+  ;; It has some weird interactions with the changed files list, in that files
+  ;; with nothing but whitespace changes go missing. Toggle back to find them again.
+  (defun magit-toggle-whitespace ()
+    (interactive)
+    (if (member "-w" magit-diff-options)
+        (magit-dont-ignore-whitespace)
+      (magit-ignore-whitespace)))
+
+  (defun magit-ignore-whitespace ()
+    (interactive)
+    (add-to-list 'magit-diff-options "-w")
+    (magit-refresh))
+
+  (defun magit-dont-ignore-whitespace ()
+    (interactive)
+    (setq magit-diff-options (remove "-w" magit-diff-options))
+    (magit-refresh))
+
+  (define-key magit-mode-map (kbd "W") 'magit-toggle-whitespace)
+  ;; }}
+
   ;; {{ This code makes magit-status run alone in the frame,
   ;; and then restores the old window configuration when you quit out of magit.
 
