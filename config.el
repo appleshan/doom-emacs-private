@@ -49,6 +49,6 @@
                          (magit-pull "--rebase" "--autostash")))
 
 ;; Unbindings
-(global-set-key (kbd "C-SPC") nil)
+(global-unset-key (kbd "C-SPC"))
 
 ;;; config.el ends here
