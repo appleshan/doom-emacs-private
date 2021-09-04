@@ -65,6 +65,16 @@
   (add-hook 'org-mode-hook 'real-auto-save-mode)
   (add-hook 'prog-mode-hook 'real-auto-save-mode))
 
+;; Nginx Config Files
+(use-package! nginx-mode
+  :mode "/etc/nginx/sites-\\(?:available\\|enabled\\)/")
+
+;; Systemd Unit Files
+(use-package! systemd)
+
+;; TOML
+(use-package! toml-mode)
+
 (map! :nv "C-u" #'evil-scroll-up
 
       (:after company

@@ -15,3 +15,7 @@
 (package! visual-regexp-steroids)
 
 (package! real-auto-save)
+
+(package! nginx-mode)
+(package! systemd)
+(package! toml-mode)
