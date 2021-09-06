@@ -156,7 +156,11 @@
     (error "Function `rime--posframe-display-content' is not available."))
   )
 
-(use-package! pinyinlib
-  :defer t)
-(use-package! pinyin-search
-  :defer t)
+;; Evil search Chinese characters by pinyin
+(use-package! evil-pinyin
+  :init
+  ;;(setq-default evil-pinyin-scheme 'simplified-xiaohe-all)
+  ;;(setq-default evil-pinyin-with-search-rule 'always)
+  :config
+  ;;(evil-select-search-module 'evil-search-module 'evil-search)
+  (global-evil-pinyin-mode))

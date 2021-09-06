@@ -7,5 +7,4 @@
   :recipe (:host github :repo "DogLooksGood/emacs-rime"
            :files ("Makefile" "lib.c" "rime.el" "rime-predicates.el")))
 
-(package! pinyinlib)
-(package! pinyin-search)
+(package! evil-pinyin)
