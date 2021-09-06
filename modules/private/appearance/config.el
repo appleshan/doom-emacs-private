@@ -4,6 +4,9 @@
 (load! "+ui")
 (load! "+popup")
 
+(use-package! all-the-icons-dired
+  :hook (dired-mode . all-the-icons-dired-mode))
+
 ;; Discover key bindings and their meaning for the current Emacs major mode
 (use-package! discover-my-major
   :defer t)

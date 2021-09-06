@@ -65,9 +65,6 @@
     (interactive)
     (message "Current directory is: %s" default-directory)))
 
-(use-package! all-the-icons-dired
-  :hook (dired-mode . all-the-icons-dired-mode))
-
 (after! dumb-jump
   ;; If your project has multi-line method signatures you should use ag.
   (setq dumb-jump-force-searcher 'rg)
