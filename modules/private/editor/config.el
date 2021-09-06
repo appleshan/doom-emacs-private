@@ -47,14 +47,12 @@
   (setq insert-translated-name-translate-engine "youdao"))
 
 (use-package! visual-regexp
-  ; :commands (vr/replace vr/query-replace) ; See the bind of init-visual-regexp-steroids.
   :defer t)
 
 (use-package! visual-regexp-steroids
-  :commands (vr/select-replace vr/select-query-replace)
   :defer t
-  :bind (("C-M-%" . vr/replace)
-         ("M-%"   . vr/query-replace)
+  :bind (("C-M-%" . vr/select-replace)
+         ("M-%"   . vr/select-query-replace)
          ("C-M-r"   . vr/isearch-backward)
          ("C-M-s"   . vr/isearch-forward)
          ("C-s" . isearch-forward)  ; ordinary forward search
