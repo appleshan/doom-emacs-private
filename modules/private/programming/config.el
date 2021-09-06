@@ -231,7 +231,9 @@
    ("C-c `"  . wrap-with-back-quotes))
   )
 
-;;; color-rg: Search and refactoring tool based on ripgrep.
+;; color-rg: Search and refactoring tool based on ripgrep.
+;; 操作步骤：r 表示进入替换，按 y 或者 n 来表示是否替换当前行，按 ! 替换所有。
+;; @See https://github.com/manateelazycat/color-rg/issues/44
 (use-package! color-rg
   :commands (color-rg-search-input-in-project
              color-rg-search-symbol-in-project
