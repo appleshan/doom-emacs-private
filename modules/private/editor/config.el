@@ -65,12 +65,52 @@
   (add-hook 'org-mode-hook 'real-auto-save-mode)
   (add-hook 'prog-mode-hook 'real-auto-save-mode))
 
-;; Nginx Config Files
-(use-package! nginx-mode
-  :mode "/etc/nginx/sites-\\(?:available\\|enabled\\)/")
+;; conf-mode: major-mdoe for editing conf files
+;; https://github.com/jrockway/emacs/blob/master/lisp/textmodes/conf-mode.el
+(use-package! conf-mode
+  :mode ("\\.*rc$" . conf-unix-mode))
 
-;; Systemd Unit Files
-(use-package! systemd)
+;; major made for crontab files
+;; https://github.com/emacs-pe/crontab-mode
+(use-package! crontab-mode
+  :defer t
+  :mode "\\.?cron\\(tab\\)?\\'")
+
+;; dot-env: An Emacs major mode for .env files
+;; https://github.com/preetpalS/emacs-dotenv-mode
+(use-package! dotenv-mode
+  :mode (("\\.env" . dotenv-mode)
+         ("\\.env\\..*\\'" . dotenv-mode)))
+
+(use-package! ini-mode
+  :mode "\\.ini\\'")
+
+;; nginx-mode: Emacs editing mode for Nginx config files
+;; https://github.com/ajc/nginx-mode
+(use-package! nginx-mode
+  :if (executable-find "nginx")
+  :mode (("/nginx/sites-\\(?:available\\|enabled\\)/" . nginx-mode)
+         ("nginx.conf" . nginx-mode))
+  :custom
+  (nginx-indent-level 4)
+  (nginx-indent-tabs-mode nil))
+
+;; emacs mode for editing ssh config files.
+;; https://github.com/jhgorrell/ssh-config-mode-el
+(use-package! ssh-config-mode
+  :defer t
+  :mode (("/\\.ssh/config\\'"   . ssh-config-mode)
+         ("/sshd?_config\\'"    . ssh-config-mode)
+         ("/known_hosts\\'"     . ssh-known-hosts-mode)
+         ("/authorized_keys\\'" . ssh-authorized-keys-mode))
+  :hook
+  (ssh-config-mode . turn-on-font-lock))
+
+;; systemd: Major mode for editing systemd units
+;; https://github.com/holomorph/systemd-mode
+(use-package! systemd
+  :defer t
+  :mode ("\\.service\\'" . systemd-mode))
 
 ;; TOML
 (use-package! toml-mode)

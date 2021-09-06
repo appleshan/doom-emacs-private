@@ -16,6 +16,11 @@
 
 (package! real-auto-save)
 
+(package! conf-mode)
+(package! crontab-mode)
+(package! dotenv-mode)
+(package! ini-mode)
 (package! nginx-mode)
+(package! ssh-config-mode)
 (package! systemd)
 (package! toml-mode)
