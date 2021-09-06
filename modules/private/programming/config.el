@@ -256,6 +256,13 @@
   `(color-rg-font-lock-header-line-keyword :foreground ,(doom-color 'magenta))
   `(color-rg-font-lock-header-line-edit-mode :foreground ,(doom-color 'magenta))))
 
+(use-package! instant-rename-tag
+  :defer 3
+  :config
+  (map! :leader
+        (:prefix ("m" . "local leader")
+         :desc "Instantly rename HTML tag" "o" #'instant-rename-tag)))
+
 ;; hideshow 扩展: 显示被隐藏的代码行数
 ;; @See https://github.com/condy0919/emacs-newbie/blob/master/introduction-to-builtin-modes.md#hideshow
 (after! hideshow
