@@ -1,8 +1,5 @@
 ;;; config.el -*- lexical-binding: t; -*-
 
-;; ** loading
-(load! "+avy")
-
 ;; 这个包会自动检测是否有权限编辑，没有权限就自动调用sudo.
 (use-package! auto-sudoedit
   :defer t

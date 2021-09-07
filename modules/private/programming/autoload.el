@@ -1,7 +1,7 @@
 ;;; autoload.el -*- lexical-binding: t; -*-
 
 ;;;###autoload
-(defhydra +hydra/symbol-overlay (:hint nil)
+(defhydra +programming/symbol-overlay-hydra (:hint nil)
   ("i" symbol-overlay-put                  "toggle at point" :column "highlight")
   ("t" symbol-overlay-toggle-in-scope      "toggle scope   "                    )
   ("u" symbol-overlay-remove-all           "unhighlight all"                    )
@@ -26,7 +26,7 @@
       (find-function sym))))
 
 ;;;###autoload
-(defun +programming|ascii-table ()
+(defun +programming/ascii-table ()
   "Display basic ASCII table (0 thru 128)."
   (interactive)
   (switch-to-buffer "*ASCII*")

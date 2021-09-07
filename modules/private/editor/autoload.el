@@ -1,6 +1,7 @@
-;;; +avy.el --- description -*- lexical-binding: t; -*-
+;;; autoload.el -*- lexical-binding: t; -*-
 
-(defhydra +hydra/avy-jump-char (:color blue :columns 3 :hint nil)
+;;;###autoload
+(defhydra +editor/avy-jump-char-hydra (:color blue :columns 3 :hint nil)
   "Jump By Char ->"
   ("c" avy-goto-char "Char")
   ("l" avy-goto-char-in-line "In line")
@@ -10,7 +11,8 @@
   ("b" avy-goto-char-2-below "Below")
   )
 
-(defhydra +hydra/avy-jump-line (:color blue :columns 3 :hint nil)
+;;;###autoload
+(defhydra +editor/avy-jump-line-hydra (:color blue :columns 3 :hint nil)
   "Jump To Line ->"
   ("u" avy-goto-line-above "Above")
   ("d" avy-goto-line-below "Below")
@@ -18,7 +20,8 @@
   ("e" avy-goto-end-of-line "Line End")
   )
 
-(defhydra +hydra/avy-jump-word (:color blue :columns 3 :hint nil)
+;;;###autoload
+(defhydra +editor/avy-jump-word-hydra (:color blue :columns 3 :hint nil)
   "Jump By Word ->"
   ("w" avy-goto-word-1 "word1")
   ("0" avy-goto-word-0 "word0")
@@ -30,7 +33,3 @@
   ("s" avy-goto-subword-0 "subword-0")
   ("S" avy-goto-subword-1 "subword-1")
   )
-
-(provide '+avy)
-
-;;; +avy.el ends here
