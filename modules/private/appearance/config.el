@@ -44,6 +44,9 @@
 ;; Dynamic Tiling Windows in Emacs with Edwina
 (use-package! edwina
   :ensure t
+  :custom
+  (edwina-mfact 0.55)
+  (edwina-narrow-threshold 115)
   :config
   ;; The above seems to now work preventing the mode map being called and added to
   ;; the keymap list
