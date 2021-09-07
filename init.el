@@ -127,7 +127,6 @@
         +dictionary
         +docsets)
        (lsp +peek)
-       ;;macos             ; MacOS-specific commands
        magit             ; a git porcelain for Emacs
        ;;make              ; run make tasks from Emacs
        ;;pass              ; password manager for nerds
@@ -140,38 +139,42 @@
        ;;upload            ; map local to remote projects via ssh/ftp
 
        :os
-       ;;arch
        ;;(:if IS-MAC macos)  ; improve compatibility with macOS
-       ;;nixos
        ;;tty               ; improve the terminal Emacs experience
 
        :lang
        ;;agda
-       ;;assembly
        ;;beancount
        ;;(cc +lsp)
-       ;;crystal
        ;;clojure
-       ;;(csharp +unity +lsp)
        ;;common-lisp       ; if you've seen one lisp, you've seen them all
        ;;coq
-       data              ; config/data formats
+       ;;crystal
+       ;;(csharp +unity +lsp)
        ;;(dart +lsp)
-       ;;erlang
+       data              ; config/data formats
+       ;;dhall
        ;;elixir
        ;;elm
        emacs-lisp        ; drown in parentheses
+       ;;erlang
        ;;ess
+       ;;factor
        ;;faust
        ;;fsharp
+       ;;fstar
+       ;;gdscript
        ;;go
        ;;haskell
        ;;hy
+       ;;idris
        ;;(java +meghanada)
        (javascript +lsp)        ; all(hope(abandon(ye(who(enter(here))))))
        (json +lsp)              ; At least it ain't XML
        ;;julia
+       ;;kotlin
        ;;latex
+       ;;lean
        ;;ledger
        ;;(lua +fennel)
        ;;markdown
@@ -179,23 +182,27 @@
        ;;nix
        ;;ocaml
        org               ; organize your plain life in plain text
-       ;;perl
        ;;php
        ;;plantuml
        ;;purescript
        ;;(python +lsp)
        ;;qt
        ;;racket
+       ;;raku
        ;;rest
+       ;;rst
        ;;ruby
        ;;(rust +lsp)
        ;;scala
        ;;(scheme +guile)   ; a fully conniving family of lisps
        sh                ; she sells {ba,z,fi}sh shells on the C xor
        ;;sml
+       ;;solidity
        ;;swift
+       ;;terra
        (web +lsp)               ; the tubes
        (yaml +lsp)              ; JSON, but readable
+       ;;zig
 
        :email
        ;;(mu4e +gmail)
@@ -207,7 +214,7 @@
        ;;everywhere        ; *leave* Emacs!? You must be joking
        ;;irc
        ;;(rss +org)
-       ;;ereader
+       ;;twitter
 
        :config
        ;;literate
