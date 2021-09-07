@@ -74,6 +74,7 @@
                  (( string-match-p "popup" (buffer-name in-buffer)) t)
                  (( string-match-p "Password-Store" (buffer-name in-buffer)) t)
                  (( string-match-p "*transient*" (buffer-name in-buffer)) t)
+                 (( string-match-p "hydra" (buffer-name in-buffer)) t)
                  (( string-match-p "magit" (buffer-name in-buffer)) t)
                  (t nil)
                  )
