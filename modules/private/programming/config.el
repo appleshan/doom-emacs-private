@@ -287,3 +287,18 @@
   (setq imenu-list-focus-after-activation t)
   (setq imenu-list-after-jump-hook nil)
   (add-hook 'menu-list-after-jump-hook #'recenter-top-bottom))
+
+(use-package! smerge-mode
+  :init
+  (progn
+    ;; 打开 merge confict 文件时自动开启 smerge-mode.
+    (defun +vc/enable-smerge-maybe ()
+      "Auto-enable `smerge-mode' when merge conflict is detected."
+      (save-excursion
+        (goto-char (point-min))
+        (when (re-search-forward "^<<<<<<< " nil :noerror)
+          (smerge-mode 1))))
+    (add-hook 'find-file-hook #'+vc/enable-smerge-maybe :append))
+  :hook (magit-diff-visit-file . (lambda ()
+                                   (when smerge-mode
+                                     (+vc/smerge-hydra/body)))))
