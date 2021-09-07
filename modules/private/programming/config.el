@@ -276,3 +276,14 @@
           (overlay-put ov 'display (propertize info 'face hideshow-folded-face)))))
 
   (setq hs-set-up-overlay 'hideshow-folded-overlay-fn))
+
+(use-package! imenu-list
+  :defer t
+  :init
+  (map! :leader
+        :desc "imenu" "oi" #'imenu-list-toggle)
+  :config
+  (setq imenu-list-auto-resize t)
+  (setq imenu-list-focus-after-activation t)
+  (setq imenu-list-after-jump-hook nil)
+  (add-hook 'menu-list-after-jump-hook #'recenter-top-bottom))

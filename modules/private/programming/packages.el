@@ -14,3 +14,5 @@
 
 (package! instant-rename-tag
   :recipe (:host github :repo "manateelazycat/instant-rename-tag"))
+
+(package! imenu-list)

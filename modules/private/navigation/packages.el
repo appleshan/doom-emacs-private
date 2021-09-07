@@ -4,5 +4,3 @@
 (package! dired-single)
 
 (package! projectile)
-
-(package! imenu-list)
