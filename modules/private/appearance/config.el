@@ -48,51 +48,6 @@
   (edwina-mfact 0.55)
   (edwina-narrow-threshold 115)
   :config
-  ;; The above seems to now work preventing the mode map being called and added to
-  ;; the keymap list
-  (defun edwina--init ()
-    "Initialize command `edwina-mode'."
-    (print! "Simplified Edwina init")
-    (message "Simplified Edwina init")
-    (advice-add #'display-buffer :around #'edwina--display-buffer)
-    (unless (assoc 'edwina-mode mode-line-misc-info)
-      (push '(edwina-mode (:eval (edwina-mode-line-indicator)))
-            (cdr (last mode-line-misc-info))))
-    (edwina-arrange))
-
-  ;; The filter for Doom obviously still needs some work.
-  ;; +popup-buffer-p appears to return nil when I expected it to be non nil.
-  ;; So a bit more digging required here to get this playing well with Doom.
-  ;; trying the below for now, but pretty sure it can be improved.'
-  ;; COnd at least allows another layer of filtering.
-  (defun doom-popup-filter (in-buffer)
-    (with-current-buffer in-buffer
-      (progn
-        (message "[EDWINA] checking buffer t[%s] ib[%s] pun[%s] pub[%s] pu[%s] cb[%s] pm[%s]" (type-of in-buffer) in-buffer (+popup-buffer-p (buffer-name in-buffer)) (+popup-buffer-p in-buffer) (+popup-buffer-p) (current-buffer) +popup-mode)
-        (if (or (+popup-buffer-p)
-                (cond
-                 (( string-match-p "popup" (buffer-name in-buffer)) t)
-                 (( string-match-p "Password-Store" (buffer-name in-buffer)) t)
-                 (( string-match-p "*transient*" (buffer-name in-buffer)) t)
-                 (( string-match-p "hydra" (buffer-name in-buffer)) t)
-                 (( string-match-p "magit" (buffer-name in-buffer)) t)
-                 (t nil)
-                 )
-                )
-            (progn
-              (message "Filter %s" (buffer-name in-buffer))
-              t
-              )
-          (progn
-            (message "No Filter %s" (buffer-name in-buffer))
-            nil
-            )
-          )
-        )
-      )
-    )
-  (setq! edwina-buffer-filter #'doom-popup-filter)
-
   (map! :leader
         (:prefix ("e" . "Edwina")
          :desc "Toggle Edwina" "e" #'edwina-mode
