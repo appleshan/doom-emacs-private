@@ -34,6 +34,11 @@
                  ))
     (add-hook hook '(lambda () (flycheck-mode 1)))))
 
+(after! flycheck-posframe
+  (setq flycheck-posframe-warning-prefix "⚠ "
+        flycheck-posframe-info-prefix "··· "
+        flycheck-posframe-error-prefix " "))
+
 (after! magit
   ;; {{ Actual changes lost in a sea of whitespace diffs?
   ;; This adds W to toggle ignoring whitespace in magit.
