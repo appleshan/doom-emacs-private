@@ -34,8 +34,6 @@
                  ))
     (add-hook hook '(lambda () (flycheck-mode 1)))))
 
-;; pretty-magit
-;; @see http://www.modernemacs.com/post/pretty-magit/
 (after! magit
   ;; {{ Actual changes lost in a sea of whitespace diffs?
   ;; This adds W to toggle ignoring whitespace in magit.
@@ -90,18 +88,22 @@
 
   (define-key magit-status-mode-map (kbd "C-c C-a") 'magit-just-amend)
   ;; }}
+)
 
-  (use-package! pretty-magit
-    :defer 1
-    :load-path "~/.config/doom/local/pretty-magit/"
-    :config
-    (pretty-magit "Feature" ? '(:foreground "slate gray" :height 1.0 :family "FontAwesome"))
-    (pretty-magit "Add" ? '(:foreground "#375E97" :height 1.0 :family "FontAwesome"))
-    (pretty-magit "Fix" ? '(:foreground "#FB6542" :height 1.0 :family "FontAwesome"))
-    (pretty-magit "Clean" ? '(:foreground "#FFBB00" :height 1.0 :family "FontAwesome"))
-    (pretty-magit "Docs" ? '(:foreground "#3F681C" :height 1.0 :family "FontAwesome"))
-    (pretty-magit "master" ? '(:box nil :height 1.0 :family "github-octicons") t)
-    (pretty-magit "origin" ? '(:box nil :height 1.0 :family "github-octicons") t)))
+;; pretty-magit
+;; @see http://www.modernemacs.com/post/pretty-magit/
+(use-package! pretty-magit
+  :after magit
+  :defer 1
+  :load-path "~/.config/doom/local/pretty-magit/"
+  :config
+  (pretty-magit "Feature" ? '(:foreground "slate gray" :height 1.0 :family "FontAwesome"))
+  (pretty-magit "Add" ? '(:foreground "#375E97" :height 1.0 :family "FontAwesome"))
+  (pretty-magit "Fix" ? '(:foreground "#FB6542" :height 1.0 :family "FontAwesome"))
+  (pretty-magit "Clean" ? '(:foreground "#FFBB00" :height 1.0 :family "FontAwesome"))
+  (pretty-magit "Docs" ? '(:foreground "#3F681C" :height 1.0 :family "FontAwesome"))
+  (pretty-magit "master" ? '(:box nil :height 1.0 :family "github-octicons") t)
+  (pretty-magit "origin" ? '(:box nil :height 1.0 :family "github-octicons") t))
 
 ;; Package 'magit-delta' integrates Delta (https://github.com/dandavison/delta)
 ;; with Magit, so that diffs in Magit are displayed with color highlighting
