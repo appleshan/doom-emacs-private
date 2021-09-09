@@ -1,3 +1,4 @@
+;; -*- no-byte-compile: t; -*-
 ;;; ~/.config/doom/packages.el
 
 ;; (package! doom-snippets
@@ -10,3 +11,6 @@
 ;; (package! doom-themes
 ;;   :recipe (:local-repo "~/projects/plugins/emacs-doom-themes/"
 ;;            :files ("*.el" "themes/*.el" "extensions/*.el")))
+
+;; * Disable
+(package! flycheck-popup-tip :disable t)
