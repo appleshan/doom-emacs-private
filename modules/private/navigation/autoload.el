@@ -54,3 +54,16 @@ _t_: toggle marks _Q_: find/rep
 
   ("<up>" dired-up-directory)
   )
+
+;; @see http://oremacs.com/2015/01/12/dired-file-size/
+;;;###autoload
+(defun +dired|get-dir-size ()
+  (interactive)
+  (let ((files (dired-get-marked-files)))
+    (with-temp-buffer
+      (apply 'call-process "/usr/bin/du" nil t nil "-sh" files)
+      (message
+        "Size of all marked files: %s"
+        (progn
+          (re-search-backward "\\(^[ 0-9.,]+[A-Za-z]+\\).*$")
+          (match-string 1))))))
