@@ -11,21 +11,6 @@
 (use-package! discover-my-major
   :defer t)
 
-(use-package! awesome-tab
-  :config
-  (setq awesome-tab-cycle-scope 'tabs ; Navigate through visible tabs only.
-        awesome-tab-display-sticky-function-name nil)
-  (awesome-tab-mode t)
-  (with-eval-after-load 'evil
-    (define-key evil-normal-state-map (kbd ",tt") 'awesome-tab-switch-group)
-    (define-key evil-normal-state-map (kbd ",ta") 'awesome-tab-select-beg-tab)
-    (define-key evil-normal-state-map (kbd ",te") 'awesome-tab-select-end-tab)
-    (define-key evil-normal-state-map (kbd ",t<") 'awesome-tab-move-current-tab-to-left)
-    (define-key evil-normal-state-map (kbd ",t>") 'awesome-tab-move-current-tab-to-right)
-    (define-key evil-normal-state-map (kbd ",tl") 'awesome-tab-forward)
-    (define-key evil-normal-state-map (kbd ",th") 'awesome-tab-backward))
-  )
-
 (after! doom-modeline
   (remove-hook 'display-battery-mode-hook #'doom-modeline-override-battery-modeline)
   (remove-hook 'doom-modeline-mode-hook #'doom-modeline-override-battery-modeline)
