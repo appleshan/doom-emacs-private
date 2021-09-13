@@ -28,7 +28,6 @@
 
 ;; Dynamic Tiling Windows in Emacs with Edwina
 (use-package! edwina
-  :ensure t
   :custom
   (edwina-mfact 0.55)
   (edwina-narrow-threshold 115)
