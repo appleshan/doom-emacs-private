@@ -44,11 +44,6 @@
     (dired-omit-mode 1)) ; initially omit unintrested files
   (add-hook 'dired-mode-hook 'enable-dired-omit-mode))
 
-;; Highlights dired buffer like k
-(after! dired-k
-  (setq dired-k-padding 1)
-  (setq dired-k-human-readable t))
-
 ;; dired renaming like GUI file manager
 (use-package! dired-efap
   :after-call dired
