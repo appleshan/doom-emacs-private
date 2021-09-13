@@ -1,5 +1,8 @@
 ;;; autoload.el -*- lexical-binding: t; -*-
 
+;;{{ avy
+;; @See https://github.com/abo-abo/avy
+
 ;;;###autoload
 (defhydra +editor/avy-jump-char-hydra (:color blue :columns 3 :hint nil)
   "Jump By Char ->"
@@ -33,3 +36,4 @@
   ("s" avy-goto-subword-0 "subword-0")
   ("S" avy-goto-subword-1 "subword-1")
   )
+;;}}
