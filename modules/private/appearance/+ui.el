@@ -17,9 +17,9 @@
 
 ;; Fonts
 (setq doom-font (font-spec :family "JetBrainsMono" :size 14 :weight 'light)
-      doom-variable-pitch-font (font-spec :family "JetBrainsMono" :size 14)
+      doom-variable-pitch-font (font-spec :family "Source Sans Pro" :size 14)
       doom-unicode-font (font-spec :family "IPAmjMincho")
-      doom-big-font (font-spec :family "JetBrainsMono" :size 16))
+      doom-big-font (font-spec :family "等距更纱黑体 SC" :size 16))
 
 ;; {{ 字体设置的新方法
 ;; @See https://manateelazycat.github.io/emacs/2020/04/02/org-font.html
